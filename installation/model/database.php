@@ -1143,9 +1143,9 @@ class InstallationModelDatabase extends JModelBase
 		}
 
 		// Add function part as is.
-		for ($f = 1; $f < count($funct); $f++)
+		foreach ($funct as $function)
 		{
-			$queries[] = 'CREATE OR REPLACE FUNCTION ' . $funct[$f];
+			$queries[] = 'CREATE OR REPLACE FUNCTION ' . $function;
 		}
 
 		return $queries;
