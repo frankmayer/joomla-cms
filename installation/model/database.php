@@ -1112,7 +1112,7 @@ class InstallationModelDatabase extends JModelBase
 		// Parse the schema file to break up queries.
 		for ($i = 0; $i < strlen($query) - 1; $i++)
 		{
-			if ($query[$i] == ";" && !$in_string)
+			if (!$in_string && $query[$i] == ";")
 			{
 				$queries[] = substr($query, 0, $i);
 				$query     = substr($query, $i + 1);
