@@ -197,12 +197,10 @@ class JToolbarTest extends TestCase
 			$this->equalTo('MyTestPath1' . DIRECTORY_SEPARATOR)
 		);
 
-		$initialCount = count($initialValue);
-
-		for ($i = 0; $i < $initialCount; $i++)
+		foreach ($initialValue as $i => $value)
 		{
 			$this->assertThat(
-				$initialValue[$i],
+				$value,
 				$this->equalTo($newValue[$i+2])
 			);
 		}
@@ -225,12 +223,11 @@ class JToolbarTest extends TestCase
 			$this->equalTo('MyTestPath' . DIRECTORY_SEPARATOR)
 		);
 
-		$initialCount = count($initialValue);
 
-		for ($i = 0; $i < $initialCount; $i++)
+		foreach ($initialValue as $i => $value)
 		{
 			$this->assertThat(
-				$initialValue[$i],
+				$value,
 				$this->equalTo($newValue[$i+1])
 			);
 		}
