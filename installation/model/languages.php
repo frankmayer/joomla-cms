@@ -565,7 +565,7 @@ class InstallationModelLanguages extends JModelBase
 		}
 
 		// Store language filter plugin parameters.
-		if ($pluginName == 'plg_system_languagefilter')
+		if ($pluginName === 'plg_system_languagefilter')
 		{
 			$params = '{'
 					. '"detect_browser":"0",'
@@ -745,7 +745,7 @@ class InstallationModelLanguages extends JModelBase
 		$nativeLanguageName       = $installationLocalisedIni->_('INSTL_DEFAULTLANGUAGE_NATIVE_LANGUAGE_NAME');
 
 		// If the local name do not exist in the translation file we use the international standard name.
-		if ($nativeLanguageName == 'INSTL_DEFAULTLANGUAGE_NATIVE_LANGUAGE_NAME')
+		if ($nativeLanguageName === 'INSTL_DEFAULTLANGUAGE_NATIVE_LANGUAGE_NAME')
 		{
 			$nativeLanguageName = $itemLanguage->name;
 		}

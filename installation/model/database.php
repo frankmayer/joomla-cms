@@ -157,7 +157,7 @@ class InstallationModelDatabase extends JModelBase
 		}
 
 		// Workaround for UPPERCASE table prefix for postgresql
-		if ($options->db_type == 'postgresql')
+		if ($options->db_type === 'postgresql')
 		{
 			if (strtolower($options->db_prefix) != $options->db_prefix)
 			{
@@ -234,7 +234,7 @@ class InstallationModelDatabase extends JModelBase
 			 * PDO MySQL: [1049] Unknown database 'database_name'
 			 * PostgreSQL: Error connecting to PGSQL database
 			 */
-			if ($type == 'pdomysql' && strpos($e->getMessage(), '[1049] Unknown database') === 42)
+			if ($type === 'pdomysql' && strpos($e->getMessage(), '[1049] Unknown database') === 42)
 			{
 				/*
 				 * Now we're really getting insane here; we're going to try building a new JDatabaseDriver instance without the database name
@@ -277,7 +277,7 @@ class InstallationModelDatabase extends JModelBase
 					return false;
 				}
 			}
-			elseif ($type == 'postgresql' && strpos($e->getMessage(), 'Error connecting to PGSQL database') === 42)
+			elseif ($type === 'postgresql' && strpos($e->getMessage(), 'Error connecting to PGSQL database') === 42)
 			{
 				JFactory::getApplication()->enqueueMessage(JText::_('INSTL_DATABASE_COULD_NOT_CREATE_DATABASE'), 'error');
 
@@ -299,7 +299,7 @@ class InstallationModelDatabase extends JModelBase
 			return false;
 		}
 
-		if (($type == 'mysql') || ($type == 'mysqli') || ($type == 'pdomysql'))
+		if (($type === 'mysql') || ($type === 'mysqli') || ($type === 'pdomysql'))
 		{
 			// @internal MySQL versions pre 5.1.6 forbid . / or \ or NULL.
 			if ((preg_match('#[\\\/\.\0]#', $options->db_name)) && (!version_compare($db_version, '5.1.6', '>=')))
@@ -327,7 +327,7 @@ class InstallationModelDatabase extends JModelBase
 		}
 
 		// PostgreSQL database older than version 9.0.0 needs to run 'CREATE LANGUAGE' to create function.
-		if (($options->db_type == 'postgresql') && (!version_compare($db_version, '9.0.0', '>=')))
+		if (($options->db_type === 'postgresql') && (!version_compare($db_version, '9.0.0', '>=')))
 		{
 			$db->setQuery("select lanpltrusted from pg_language where lanname='plpgsql'");
 
@@ -344,7 +344,7 @@ class InstallationModelDatabase extends JModelBase
 
 			$column = $db->loadResult();
 
-			if ($column != 't')
+			if ($column !== 't')
 			{
 				$db->setQuery("CREATE LANGUAGE plpgsql");
 
@@ -389,7 +389,7 @@ class InstallationModelDatabase extends JModelBase
 		// Remove *_errors value.
 		foreach ($options as $i => $option)
 		{
-			if (isset($i['1']) && $i['1'] == '*')
+			if (isset($i['1']) && $i['1'] === '*')
 			{
 				unset($options[$i]);
 
@@ -435,7 +435,7 @@ class InstallationModelDatabase extends JModelBase
 		$this->setDatabaseCharset($db, $options->db_name);
 
 		// Should any old database tables be removed or backed up?
-		if ($options->db_old == 'remove')
+		if ($options->db_old === 'remove')
 		{
 			// Attempt to delete the old database tables.
 			if (!$this->deleteDatabase($db, $options->db_prefix))
@@ -487,11 +487,11 @@ class InstallationModelDatabase extends JModelBase
 		$this->setDatabaseCharset($db, $options->db_name);
 
 		// Set the appropriate schema script based on UTF-8 support.
-		if (($type == 'mysql') || ($type == 'mysqli') || ($type == 'pdomysql'))
+		if (($type === 'mysql') || ($type === 'mysqli') || ($type === 'pdomysql'))
 		{
 			$schema = 'sql/mysql/joomla.sql';
 		}
-		elseif ($type == 'sqlsrv' || $type == 'sqlazure')
+		elseif ($type === 'sqlsrv' || $type === 'sqlazure')
 		{
 			$schema = 'sql/sqlazure/joomla.sql';
 		}
@@ -542,11 +542,11 @@ class InstallationModelDatabase extends JModelBase
 		// Attempt to update the table #__schema.
 		$pathPart = JPATH_ADMINISTRATOR . '/components/com_admin/sql/updates/';
 
-		if (($type == 'mysql') || ($type == 'mysqli') || ($type == 'pdomysql'))
+		if (($type === 'mysql') || ($type === 'mysqli') || ($type === 'pdomysql'))
 		{
 			$pathPart .= 'mysql/';
 		}
-		elseif ($type == 'sqlsrv' || $type == 'sqlazure')
+		elseif ($type === 'sqlsrv' || $type === 'sqlazure')
 		{
 			$pathPart .= 'sqlazure/';
 		}
@@ -628,11 +628,11 @@ class InstallationModelDatabase extends JModelBase
 		}
 
 		// Load the localise.sql for translating the data in joomla.sql.
-		if (($type == 'mysql') || ($type == 'mysqli') || ($type == 'pdomysql'))
+		if (($type === 'mysql') || ($type === 'mysqli') || ($type === 'pdomysql'))
 		{
 			$dblocalise = 'sql/mysql/localise.sql';
 		}
-		elseif ($type == 'sqlsrv' || $type == 'sqlazure')
+		elseif ($type === 'sqlsrv' || $type === 'sqlazure')
 		{
 			$dblocalise = 'sql/sqlazure/localise.sql';
 		}
@@ -722,11 +722,11 @@ class InstallationModelDatabase extends JModelBase
 		// Build the path to the sample data file.
 		$type = $options->db_type;
 
-		if ($type == 'mysqli' || $type == 'pdomysql')
+		if ($type === 'mysqli' || $type === 'pdomysql')
 		{
 			$type = 'mysql';
 		}
-		elseif ($type == 'sqlsrv')
+		elseif ($type === 'sqlsrv')
 		{
 			$type = 'sqlazure';
 		}
@@ -1123,7 +1123,7 @@ class InstallationModelDatabase extends JModelBase
 			{
 				$in_string = false;
 			}
-			elseif (!$in_string && ($query[$i] == '"' || $query[$i] == "'") && (!isset ($buffer[0]) || $buffer[0] != "\\"))
+			elseif (!$in_string && ($query[$i] === '"' || $query[$i] === "'") && (!isset ($buffer[0]) || $buffer[0] != "\\"))
 			{
 				$in_string = $query[$i];
 			}
