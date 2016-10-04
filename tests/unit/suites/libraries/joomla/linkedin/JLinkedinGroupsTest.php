@@ -81,9 +81,9 @@ class JLinkedinGroupsTest extends TestCase
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
-		$my_url = "http://127.0.0.1/gsoc/joomla-platform/linkedin_test.php";
+		$key = 'app_key';
+		$secret = 'app_secret';
+		$my_url = 'http://127.0.0.1/gsoc/joomla-platform/linkedin_test.php';
 
 		$this->options = new JRegistry;
 		$this->input = new JInput;

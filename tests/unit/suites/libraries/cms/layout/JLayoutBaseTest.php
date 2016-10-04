@@ -214,7 +214,7 @@ class JLayoutBaseTest extends PHPUnit_Framework_TestCase
 	public function testRenderDebugMessageReturnsStringOfMessagesSeparatedByNewlineCharacter()
 	{
 		$this->layoutBase->addDebugMessage('Debug message 1');
-		$this->assertEquals("Debug message 1", $this->layoutBase->renderDebugMessages());
+		$this->assertEquals('Debug message 1', $this->layoutBase->renderDebugMessages());
 		$this->layoutBase->addDebugMessage('Debug message 2');
 		$this->assertEquals("Debug message 1\nDebug message 2", $this->layoutBase->renderDebugMessages());
 	}

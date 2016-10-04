@@ -89,8 +89,8 @@ XML;
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
+		$key = 'app_key';
+		$secret = 'app_secret';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -141,13 +141,13 @@ XML;
 		(
 				array
 				(
-						"comment" => "my changeset comment",
-						"created_by" => "Josm"
+					'comment'    => 'my changeset comment',
+					'created_by' => 'Josm'
 				),
 				array
 				(
-						"A" => "a",
-						"B" => "b"
+					'A' => 'a',
+					'B' => 'b'
 				)
 		);
 
@@ -183,13 +183,13 @@ XML;
 		(
 				array
 				(
-						"comment" => "my changeset comment",
-						"created_by" => "JOsm"
+					'comment'    => 'my changeset comment',
+					'created_by' => 'JOsm'
 				),
 				array
 				(
-						"A" => "a",
-						"B" => "b"
+					'A' => 'a',
+					'B' => 'b'
 				)
 		);
 
@@ -275,8 +275,8 @@ XML;
 		$id = '14153708';
 		$tags = array
 		(
-				"comment" => "my changeset comment",
-				"created_by" => "JOsm (en)"
+			'comment'    => 'my changeset comment',
+			'created_by' => 'JOsm (en)'
 		);
 
 		$returnData = new stdClass;
@@ -309,8 +309,8 @@ XML;
 		$id = '14153708';
 		$tags = array
 		(
-				"comment" => "my changeset comment",
-				"created_by" => "JOsm (en)"
+			'comment'    => 'my changeset comment',
+			'created_by' => 'JOsm (en)'
 		);
 
 		$returnData = new stdClass;

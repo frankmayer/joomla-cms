@@ -1253,7 +1253,7 @@ class JArrayHelperTest extends PHPUnit_Framework_TestCase
 				array(
 					'integer' => 12, 'float' => 1.29999, 'string' => 'A Test String'
 				),
-				" = ",
+				' = ',
 				null,
 				true,
 				'integer = "12"float = "1.29999"string = "A Test String"',

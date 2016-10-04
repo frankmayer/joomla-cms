@@ -269,21 +269,21 @@ class JDatabaseImporterMysqlTest extends TestCase
 			array(
 				new SimpleXmlElement('<table_structure name="#__test">' . $f1 . $f2 . $k1 . $k2 . '</table_structure>'),
 				array(
-					"ALTER TABLE `jos_test` ADD UNIQUE KEY `idx_title` (`title`)",
+					'ALTER TABLE `jos_test` ADD UNIQUE KEY `idx_title` (`title`)',
 				),
 				'getAlterTableSQL should add the new key.'
 			),
 			array(
 				new SimpleXmlElement('<table_structure name="#__test">' . $f1 . $k1 . '</table_structure>'),
 				array(
-					"ALTER TABLE `jos_test` DROP COLUMN `title`",
+					'ALTER TABLE `jos_test` DROP COLUMN `title`',
 				),
 				'getAlterTableSQL should remove the title column.'
 			),
 			array(
 				new SimpleXmlElement('<table_structure name="#__test">' . $f1 . $f2 . '</table_structure>'),
 				array(
-					"ALTER TABLE `jos_test` DROP PRIMARY KEY",
+					'ALTER TABLE `jos_test` DROP PRIMARY KEY',
 				),
 				'getAlterTableSQL should drop the old primary key.'
 			),
@@ -316,7 +316,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 				new SimpleXmlElement(
 					$this->sample['xml-body-field']
 				),
-				"`body` mediumtext NOT NULL",
+				'`body` mediumtext NOT NULL',
 				'Typical blob field',
 			),
 		);
@@ -337,7 +337,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 						$this->sample['xml-primary-key']
 					),
 				),
-				"primary key  (`id`)",
+				'primary key  (`id`)',
 				'Typical primary key index',
 			),
 		);
@@ -466,7 +466,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getAddKeySQL', 'jos_test', array(new SimpleXmlElement($this->sample['xml-primary-key']))),
 			$this->equalTo(
-				"ALTER TABLE `jos_test` ADD PRIMARY KEY  (`id`)"
+				'ALTER TABLE `jos_test` ADD PRIMARY KEY  (`id`)'
 			),
 			'testGetAddKeySQL did not yield the expected result.'
 		);
@@ -546,7 +546,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getDropColumnSQL', 'jos_test', 'title'),
 			$this->equalTo(
-				"ALTER TABLE `jos_test` DROP COLUMN `title`"
+				'ALTER TABLE `jos_test` DROP COLUMN `title`'
 			),
 			'getDropColumnSQL did not yield the expected result.'
 		);
@@ -563,7 +563,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getDropKeySQL', 'jos_test', 'idx_title'),
 			$this->equalTo(
-				"ALTER TABLE `jos_test` DROP KEY `idx_title`"
+				'ALTER TABLE `jos_test` DROP KEY `idx_title`'
 			),
 			'getDropKeySQL did not yield the expected result.'
 		);
@@ -580,7 +580,7 @@ class JDatabaseImporterMysqlTest extends TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getDropPrimaryKeySQL', 'jos_test'),
 			$this->equalTo(
-				"ALTER TABLE `jos_test` DROP PRIMARY KEY"
+				'ALTER TABLE `jos_test` DROP PRIMARY KEY'
 			),
 			'getDropPrimaryKeySQL did not yield the expected result.'
 		);

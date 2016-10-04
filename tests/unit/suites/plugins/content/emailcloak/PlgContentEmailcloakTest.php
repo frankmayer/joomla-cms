@@ -238,7 +238,7 @@ class PlgContentEmailcloakTest extends TestCaseDatabase
 
 
         // Get the md5 hash
-        preg_match("/addy_text([0-9a-z]{32})/", $row->text, $output_array);
+        preg_match('/addy_text([0-9a-z]{32})/', $row->text, $output_array);
 
         // If we did some cloaking then test the JS
         if (count($output_array)) {
@@ -294,14 +294,14 @@ class PlgContentEmailcloakTest extends TestCaseDatabase
         $js = str_replace(sprintf('document.getElementById(\'cloak%s\').innerHTML = \'\';', $hash), '', $js);
         $js = str_replace(sprintf('document.getElementById(\'cloak%s\').innerHTML +=', $hash), "\n\n" . '$resultantHTML = ', $js);
         $js = str_replace('var ', '$', $js);
-        $js = str_replace("' + '", "", $js);
-        $js = preg_replace("/\saddy/", '$addy', $js);
+        $js = str_replace("' + '", '', $js);
+        $js = preg_replace('/\saddy/', '$addy', $js);
         $js = preg_replace(sprintf("/\'\+addy_text%s\+\'/", $hash), sprintf('\' . \$addy_text%s .\'', $hash), $js);
-        $js = preg_replace(sprintf("/\+\$addy%s\s\+/", $hash), sprintf('\' . \$addy_text%s .\'', $hash), $js);
-        $js = str_replace("+ path +", '. $path .', $js);
-        $js = str_replace("+ prefix +", '. $prefix .', $js);
-        $js = str_replace("+$", '.$', $js);
-        $js = str_replace("\/", '/', $js);
+        $js = preg_replace(sprintf('/\+\$addy%s\s\+/', $hash), sprintf('\' . \$addy_text%s .\'', $hash), $js);
+        $js = str_replace('+ path +', '. $path .', $js);
+        $js = str_replace('+ prefix +', '. $prefix .', $js);
+        $js = str_replace('+$', '.$', $js);
+        $js = str_replace('\/', '/', $js);
         $js = str_replace(
             sprintf('$addy%s +', $hash),
             sprintf('$addy%s .', $hash),

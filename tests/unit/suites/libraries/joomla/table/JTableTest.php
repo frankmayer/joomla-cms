@@ -413,13 +413,13 @@ class JTableTest extends TestCaseDatabase
 	 */
 	public function testStoreInsert()
 	{
-		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Pre-Condition");
+		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Pre-Condition');
 
 		$this->object->bind(array('id1' => 38, 'id2' => 26, 'title' => 'My Title'));
 
 		$this->object->store();
 
-		$this->assertEquals(3, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Store failed.");
+		$this->assertEquals(3, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Store failed.');
 	}
 
 	/**
@@ -431,7 +431,7 @@ class JTableTest extends TestCaseDatabase
 	 */
 	public function testStoreUpdate()
 	{
-		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Pre-Condition");
+		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Pre-Condition');
 
 		$this->object->bind(array('id1' => 25, 'id2' => 50, 'title' => 'My testStoreInsert Title'));
 
@@ -488,13 +488,13 @@ class JTableTest extends TestCaseDatabase
 	 */
 	public function testDelete()
 	{
-		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Pre-Condition");
+		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Pre-Condition');
 
 		$this->object->bind(array('id1' => 25, 'id2' => 50, 'title' => 'My Title'));
 
 		$this->object->delete();
 
-		$this->assertEquals(1, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Delete failed.");
+		$this->assertEquals(1, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Delete failed.');
 	}
 
 	/**
@@ -506,11 +506,11 @@ class JTableTest extends TestCaseDatabase
 	 */
 	public function testDeleteKeysProvided()
 	{
-		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Pre-Condition");
+		$this->assertEquals(2, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Pre-Condition');
 
 		$this->object->delete(array('id1' => 25, 'id2' => 50));
 
-		$this->assertEquals(1, $this->getConnection()->getRowCount('jos_dbtest_composite'), "Delete failed.");
+		$this->assertEquals(1, $this->getConnection()->getRowCount('jos_dbtest_composite'), 'Delete failed.');
 	}
 
 	/**

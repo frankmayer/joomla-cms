@@ -57,13 +57,13 @@ class JFormFieldSQLTest extends TestCaseDatabase
 
 		$this->assertThat(
 			$field->keyField,
-			$this->equalTo("id"),
+			$this->equalTo('id'),
 			'Line:' . __LINE__ . ' The property should be computed from the XML.'
 		);
 
 		$this->assertThat(
 			$field->valueField,
-			$this->equalTo("title"),
+			$this->equalTo('title'),
 			'Line:' . __LINE__ . ' The property should be computed from the XML.'
 		);
 
@@ -75,7 +75,7 @@ class JFormFieldSQLTest extends TestCaseDatabase
 
 		$this->assertThat(
 			$field->query,
-			$this->equalTo("SELECT * FROM `jos_categories`"),
+			$this->equalTo('SELECT * FROM `jos_categories`'),
 			'Line:' . __LINE__ . ' The property should be computed from the XML.'
 		);
 	}
@@ -95,7 +95,7 @@ class JFormFieldSQLTest extends TestCaseDatabase
 		TestReflection::setValue($formField, 'name', 'sql');
 		TestReflection::setValue($formField, 'valueField', 'title');
 		TestReflection::setValue($formField, 'keyField', 'id');
-		TestReflection::setValue($formField, 'query', "SELECT * FROM `jos_categories`");
+		TestReflection::setValue($formField, 'query', 'SELECT * FROM `jos_categories`');
 		TestReflection::setValue(
 			$formField, 'element',
 			simplexml_load_string('<field name="sql" type="sql" value_field="title" key_field="id" query="SELECT * FROM `jos_categories`">' .

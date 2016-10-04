@@ -115,7 +115,7 @@ class JModelFormTest extends TestCase
 			->willReturn(false);
 
 		$formMock->method('getErrors')
-			->willReturn(array("Error Message 1", "Error Message 2"));
+			->willReturn(array('Error Message 1', 'Error Message 2'));
 
 		$this->assertFalse($this->object->validate($formMock, array()));
 
@@ -180,8 +180,8 @@ class JModelFormTest extends TestCase
 	 */
 	public function testValidatePassesDataAndGroupToJform()
 	{
-		$data = array("a" => "b");
-		$group = "groupy";
+		$data = array('a' => 'b');
+		$group = 'groupy';
 
 		$formMock = $this->getMockBuilder('JForm')
 			->disableOriginalConstructor()
@@ -216,16 +216,16 @@ class JModelFormTest extends TestCase
 	{
 		return array(
 			array(
-				array("tags" => "1"),
-				array("tags" => "1")
+				array('tags' => '1'),
+				array('tags' => '1')
 			),
 			array(
-				array("metadata" => array("tags" => "1")),
-				array("metadata" => array("tags" => "1"), "tags" => "1")
+				array('metadata' => array('tags' => '1')),
+				array('metadata' => array('tags' => '1'), 'tags' => '1')
 			),
 			array(
-				array("tags" => "1", "metadata" => array("tags" => "2")),
-				array("tags" => "1", "metadata" => array("tags" => "2")),
+				array('tags' => '1', 'metadata' => array('tags' => '2')),
+				array('tags' => '1', 'metadata' => array('tags' => '2')),
 			),
 		);
 	}

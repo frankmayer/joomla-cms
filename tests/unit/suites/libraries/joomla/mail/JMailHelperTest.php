@@ -27,8 +27,8 @@ class JMailHelperTest extends TestCase
 	{
 		return array(
 			array("test\n\nme\r\r", 'testme'),
-			array("test%0Ame", 'testme'),
-			array("test%0Dme", 'testme')
+			array('test%0Ame', 'testme'),
+			array('test%0Dme', 'testme')
 		);
 	}
 
@@ -63,32 +63,32 @@ class JMailHelperTest extends TestCase
 	{
 		return array(
 			array("test\nme", "test\nme"),
-			array("test%0AconTenT-Type:me", 'testme'),
-			array("test%0Dcontent-type:me", 'testme'),
+			array('test%0AconTenT-Type:me', 'testme'),
+			array('test%0Dcontent-type:me', 'testme'),
 			array("test\ncontent-type:me", 'testme'),
 			array("test\n\ncontent-type:me", 'testme'),
 			array("test\rcontent-type:me", 'testme'),
 			array("test\r\rcontent-type:me", 'testme'),
 			// @TODO Should this be included array("test\r\ncoNTent-tYPe:me", 'testme'),
 
-			array("test%0Ato:me", 'testme'),
-			array("test%0DTO:me", 'testme'),
+			array('test%0Ato:me', 'testme'),
+			array('test%0DTO:me', 'testme'),
 			array("test\nTo:me", 'testme'),
 			array("test\n\ntO:me", 'testme'),
 			array("test\rto:me", 'testme'),
 			array("test\r\rto:me", 'testme'),
 			// @TODO Should this be included array("test\r\nto:me", 'testme'),
 
-			array("test%0Acc:me", 'testme'),
-			array("test%0DCC:me", 'testme'),
+			array('test%0Acc:me', 'testme'),
+			array('test%0DCC:me', 'testme'),
 			array("test\nCc:me", 'testme'),
 			array("test\n\ncC:me", 'testme'),
 			array("test\rcc:me", 'testme'),
 			array("test\r\rcc:me", 'testme'),
 			// @TODO Should this be included array("test\r\ncc:me", 'testme'),
 
-			array("test%0Abcc:me", 'testme'),
-			array("test%0DBCC:me", 'testme'),
+			array('test%0Abcc:me', 'testme'),
+			array('test%0DBCC:me', 'testme'),
 			array("test\nBCc:me", 'testme'),
 			array("test\n\nbcC:me", 'testme'),
 			array("test\rbcc:me", 'testme'),
@@ -127,18 +127,18 @@ class JMailHelperTest extends TestCase
 	public function dataCleanBody()
 	{
 		return array(
-			array("testFrom: Foobar me", "test me"),
-			array("testfrom: Foobar me", "testfrom: Foobar me"),
-			array("testTo: Foobar me", "test me"),
-			array("testto: Foobar me", "testto: Foobar me"),
-			array("testCc: Foobar me", "test me"),
-			array("testcc: Foobar me", "testcc: Foobar me"),
-			array("testBcc: Foobar me", "test me"),
-			array("testbcc: Foobar me", "testbcc: Foobar me"),
-			array("testSubject: Foobar me", "test me"),
-			array("testsubject: Foobar me", "testsubject: Foobar me"),
-			array("testContent-type: Foobar me", "test me"),
-			array("testcontent-type: Foobar me", "testcontent-type: Foobar me")
+			array('testFrom: Foobar me', 'test me'),
+			array('testfrom: Foobar me', 'testfrom: Foobar me'),
+			array('testTo: Foobar me', 'test me'),
+			array('testto: Foobar me', 'testto: Foobar me'),
+			array('testCc: Foobar me', 'test me'),
+			array('testcc: Foobar me', 'testcc: Foobar me'),
+			array('testBcc: Foobar me', 'test me'),
+			array('testbcc: Foobar me', 'testbcc: Foobar me'),
+			array('testSubject: Foobar me', 'test me'),
+			array('testsubject: Foobar me', 'testsubject: Foobar me'),
+			array('testContent-type: Foobar me', 'test me'),
+			array('testcontent-type: Foobar me', 'testcontent-type: Foobar me')
 			// @TODO should this be case sensitive
 		);
 	}
@@ -173,16 +173,16 @@ class JMailHelperTest extends TestCase
 	public function dataCleanSubject()
 	{
 		return array(
-			array("testFrom: Foobar me", "test me"),
-			array("testfrom: Foobar me", "testfrom: Foobar me"),
-			array("testTo: Foobar me", "test me"),
-			array("testto: Foobar me", "testto: Foobar me"),
-			array("testCc: Foobar me", "test me"),
-			array("testcc: Foobar me", "testcc: Foobar me"),
-			array("testBcc: Foobar me", "test me"),
-			array("testbcc: Foobar me", "testbcc: Foobar me"),
-			array("testContent-type: Foobar me", "test me"),
-			array("testcontent-type: Foobar me", "testcontent-type: Foobar me"),
+			array('testFrom: Foobar me', 'test me'),
+			array('testfrom: Foobar me', 'testfrom: Foobar me'),
+			array('testTo: Foobar me', 'test me'),
+			array('testto: Foobar me', 'testto: Foobar me'),
+			array('testCc: Foobar me', 'test me'),
+			array('testcc: Foobar me', 'testcc: Foobar me'),
+			array('testBcc: Foobar me', 'test me'),
+			array('testbcc: Foobar me', 'testbcc: Foobar me'),
+			array('testContent-type: Foobar me', 'test me'),
+			array('testcontent-type: Foobar me', 'testcontent-type: Foobar me'),
 			// @TODO should this be case sensitive
 		);
 	}
@@ -217,11 +217,11 @@ class JMailHelperTest extends TestCase
 	public function dataCleanAddress()
 	{
 		return array(
-			array("testme", "testme"),
-			array("test me", "test me"),
-			array("test;me", "test;me"),
-			array("test,me", "test,me"),
-			array("test ;,me", false),
+			array('testme', 'testme'),
+			array('test me', 'test me'),
+			array('test;me', 'test;me'),
+			array('test,me', 'test,me'),
+			array('test ;,me', false),
 		);
 	}
 
@@ -255,27 +255,27 @@ class JMailHelperTest extends TestCase
 	public function dataIsEmailAddress()
 	{
 		return array(
-			array("joe", false),
-			array("joe@home", true),
-			array("a@b.c", true),
-			array("joe@home.com", true),
-			array("joe.bob@home.com", true),
-			array("joe-bob[at]home.com", false),
-			array("joe@his.home.com", true),
-			array("joe@his.home.place", true),
-			array("joe@home.org", true),
-			array("joe@joebob.name", true),
-			array("joe.@bob.com", false),
-			array(".joe@bob.com", false),
-			array("joe<>bob@bob.come", false),
-			array("joe&bob@bob.com", true),
-			array("joebob@bob.edu.co", true),
-			array("~joe@bob.com", true),
-			array("joe..bob@bob.com", false),
+			array('joe', false),
+			array('joe@home', true),
+			array('a@b.c', true),
+			array('joe@home.com', true),
+			array('joe.bob@home.com', true),
+			array('joe-bob[at]home.com', false),
+			array('joe@his.home.com', true),
+			array('joe@his.home.place', true),
+			array('joe@home.org', true),
+			array('joe@joebob.name', true),
+			array('joe.@bob.com', false),
+			array('.joe@bob.com', false),
+			array('joe<>bob@bob.come', false),
+			array('joe&bob@bob.com', true),
+			array('joebob@bob.edu.co', true),
+			array('~joe@bob.com', true),
+			array('joe..bob@bob.com', false),
 			array("joe$@bob.com", true),
-			array("joe+bob@bob.com", true),
+			array('joe+bob@bob.com', true),
 			array("o'reilly@there.com", false),
-			array("o’reilly@there.com", true)
+			array('o’reilly@there.com', true)
 		);
 	}
 

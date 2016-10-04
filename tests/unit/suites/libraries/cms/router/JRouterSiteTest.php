@@ -574,12 +574,12 @@ class JRouterSiteTest extends TestCase
 		$this->assertEquals(
 			$expectedParseVars,
 			$vars,
-			"JRouterSite::parseRawRoute() did not return the expected values."
+			'JRouterSite::parseRawRoute() did not return the expected values.'
 		);
 		$this->assertEquals(
 			$expectedObjectVars,
 			$object->getVars(),
-			"JRouterSite did not have the expected values internally."
+			'JRouterSite did not have the expected values internally.'
 		);
 	}
 
@@ -912,12 +912,12 @@ class JRouterSiteTest extends TestCase
 		$this->assertEquals(
 			$expectedParseVars,
 			$vars,
-			"JRouterSite::parseSefRoute() did not return the expected values."
+			'JRouterSite::parseSefRoute() did not return the expected values.'
 		);
 		$this->assertEquals(
 			$expectedObjectVars,
 			$object->getVars(),
-			"JRouterSite did not have the expected values internally."
+			'JRouterSite did not have the expected values internally.'
 		);
 	}
 

@@ -41,7 +41,7 @@ class JModelListTest extends TestCaseDatabase
 
 		JFactory::$application = $this->getMockCmsApp();
 
-		$this->object = new JModelList(array("filter_fields" => array("field1", "field2")));
+		$this->object = new JModelList(array('filter_fields' => array('field1', 'field2')));
 	}
 
 	/**
@@ -66,7 +66,7 @@ class JModelListTest extends TestCaseDatabase
 	 */
 	public function testFilterFieldsIsSetInConstructor()
 	{
-		$this->assertSame(array("field1", "field2"), TestReflection::getValue($this->object, 'filter_fields'));
+		$this->assertSame(array('field1', 'field2'), TestReflection::getValue($this->object, 'filter_fields'));
 	}
 
 	/**
@@ -80,7 +80,7 @@ class JModelListTest extends TestCaseDatabase
 	 */
 	public function testContextIsSetInConstructor()
 	{
-		$this->assertSame("com_j.list", TestReflection::getValue($this->object, 'context'));
+		$this->assertSame('com_j.list', TestReflection::getValue($this->object, 'context'));
 	}
 
 	/**
@@ -133,7 +133,7 @@ class JModelListTest extends TestCaseDatabase
 		$this->object->setState('list.ordering', 'enabled');
 		$this->object->setState('list.direction', 'ASC');
 
-		$expectedString = "com_j.list:1:0:100:enabled:ASC";
+		$expectedString = 'com_j.list:1:0:100:enabled:ASC';
 
 		$this->assertSame(md5($expectedString), $method->invokeArgs($this->object, array('1')));
 	}
@@ -458,10 +458,10 @@ class JModelListTest extends TestCaseDatabase
 
 		$itemsReturned = $object->getItems();
 		$itemsExpected = array(
-			(object) array("id" => 1),
-			(object) array("id" => 2),
-			(object) array("id" => 3),
-			(object) array("id" => 4),
+			(object) array('id' => 1),
+			(object) array('id' => 2),
+			(object) array('id' => 3),
+			(object) array('id' => 4),
 		);
 
 		$this->assertCount(4, $itemsReturned);
@@ -488,8 +488,8 @@ class JModelListTest extends TestCaseDatabase
 
 		$itemsReturned = $object->getItems();
 		$itemsExpected = array(
-			(object) array("id" => 1),
-			(object) array("id" => 2)
+			(object) array('id' => 1),
+			(object) array('id' => 2)
 		);
 
 		$this->assertCount(2, $itemsReturned);
@@ -516,8 +516,8 @@ class JModelListTest extends TestCaseDatabase
 
 		$itemsReturned = $object->getItems();
 		$itemsExpected = array(
-			(object) array("id" => 3),
-			(object) array("id" => 4)
+			(object) array('id' => 3),
+			(object) array('id' => 4)
 		);
 
 		$this->assertCount(2, $itemsReturned);
@@ -547,7 +547,7 @@ class JModelListTest extends TestCaseDatabase
 		$objectCache = TestReflection::getValue($object, 'cache');
 
 		$this->assertArrayHasKey('ecbe76894d32ce7af659e46be7f2a9f0', $objectCache);
-		$this->assertEquals(array((object) array("id" => 1)), $objectCache['ecbe76894d32ce7af659e46be7f2a9f0']);
+		$this->assertEquals(array((object) array('id' => 1)), $objectCache['ecbe76894d32ce7af659e46be7f2a9f0']);
 	}
 
 	/**
@@ -572,7 +572,7 @@ class JModelListTest extends TestCaseDatabase
 				$this->equalTo(new stdClass)
 			)
 			->will(
-				$this->returnValue((object) array("foo" => "bar"))
+				$this->returnValue((object) array('foo' => 'bar'))
 			);
 
 		JFactory::$application = $applicationMock;
@@ -583,8 +583,8 @@ class JModelListTest extends TestCaseDatabase
 		$this->object->setState('list.start', 0);
 
 		$expected = (object) array(
-			"foo" => "bar",
-			"list" => array(
+			'foo'  => 'bar',
+			'list' => array(
 				'direction' => 'ASC',
 				'limit' => 30,
 				'ordering' => 'enabled',
@@ -612,7 +612,7 @@ class JModelListTest extends TestCaseDatabase
 		$method = new ReflectionMethod('JModelList', 'loadFormData');
 		$method->setAccessible(true);
 
-		$data = (object) array("foo" => "bar", "list" => "foobar");
+		$data = (object) array('foo' => 'bar', 'list' => 'foobar');
 
 		$applicationMock = $this->getMockCmsApp();
 		$applicationMock->expects($this->once())
@@ -644,8 +644,8 @@ class JModelListTest extends TestCaseDatabase
 
 		// Simulates filter data
 		$data = array(
-			"filter1" => "value1",
-			"filter2" => "value2"
+			'filter1' => 'value1',
+			'filter2' => 'value2'
 		);
 
 		// Set up a quite complex mock object that checks if the correct calls are made and simulates the user output
@@ -859,11 +859,11 @@ class JModelListTest extends TestCaseDatabase
 		$method->setAccessible(true);
 
 		$data = array(
-			"ordering" => "listcol",
-			"direction" => "DESC",
-			"limit" => "100",
-			"foo" => "bar",
-			"select" => "foo"
+			'ordering'  => 'listcol',
+			'direction' => 'DESC',
+			'limit'     => '100',
+			'foo'       => 'bar',
+			'select'    => 'foo'
 		);
 
 		// Set up a quite complex mock object that checks if the correct calls are made and simulates the user output
@@ -916,7 +916,7 @@ class JModelListTest extends TestCaseDatabase
 
 		// Pass the fullordering
 		$data = array(
-			"fullordering" => "listcol DESC"
+			'fullordering' => 'listcol DESC'
 		);
 
 		// Set up a quite complex mock object that checks if the correct calls are made and simulates the user output
@@ -966,7 +966,7 @@ class JModelListTest extends TestCaseDatabase
 
 		// Pass the invalid fullordering
 		$data = array(
-			"fullordering" => "listcol;"
+			'fullordering' => 'listcol;'
 		);
 
 		// Set up a quite complex mock object that checks if the correct calls are made and simulates the user output
@@ -1013,8 +1013,8 @@ class JModelListTest extends TestCaseDatabase
 
 		// Pass the invalid values
 		$data = array(
-			"ordering" => "invalidcol",
-			"direction" => "invaliddir"
+			'ordering'  => 'invalidcol',
+			'direction' => 'invaliddir'
 		);
 
 		// Set up a quite complex mock object that checks if the correct calls are made and simulates the user output

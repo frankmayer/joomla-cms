@@ -20,8 +20,8 @@ class JCacheTest extends TestCase
 
 	private $available = array();
 
-	private $testData_A = "Now is the time for all good people to throw a party.";
-	private $testData_B = "And this is the cache that tries men's souls";
+	private $testData_A = 'Now is the time for all good people to throw a party.';
+	private $testData_B = 'And this is the cache that tries men\'s souls';
 
 	private $defaultOptions;
 

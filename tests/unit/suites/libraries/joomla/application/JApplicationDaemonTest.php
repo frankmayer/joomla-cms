@@ -38,7 +38,7 @@ class JApplicationDaemonTest extends TestCase
 		parent::setUp();
 
 		// Skip this test suite if PCNTL extension is not available
-		if (!extension_loaded("PCNTL"))
+		if (!extension_loaded('PCNTL'))
 		{
 			$this->markTestSkipped('The PCNTL extension is not available.');
 		}

@@ -60,7 +60,7 @@ class JDocumentTest extends PHPUnit_Framework_TestCase
 				)
 			),
 			array(
-				array('charset' => "euc-jp", 'mediaversion' => '1a2b3c4d'),
+				array('charset' => 'euc-jp', 'mediaversion' => '1a2b3c4d'),
 				array(
 					'lineend' => "\12",
 					'charset' => 'euc-jp',
@@ -73,15 +73,15 @@ class JDocumentTest extends PHPUnit_Framework_TestCase
 				)
 			),
 			array(
-				array('language' => "de-de", 'direction' => 'rtl',
-					'tab' => 'Crazy Tab', 'link' => 'http://joomla.org',
-					'base' => 'http://base.joomla.org/dir'),
+				array('language' => 'de-de', 'direction' => 'rtl',
+				      'tab'      => 'Crazy Tab', 'link' => 'http://joomla.org',
+				      'base'     => 'http://base.joomla.org/dir'),
 				array(
 					'lineend' => "\12",
 					'charset' => 'utf-8',
 					'language' => 'de-de',
 					'direction' => 'rtl',
-					'tab' => "Crazy Tab",
+					'tab' => 'Crazy Tab',
 					'link' => 'http://joomla.org',
 					'base' => 'http://base.joomla.org/dir'
 				)

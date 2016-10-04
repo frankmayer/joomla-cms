@@ -630,7 +630,7 @@ class JGoogleEmbedMapsTest extends TestCase
 		$this->assertContains('"centerkey":"value"', $header);
 
 		// Loading
-		$this->assertContains("function asynchronouscallback() {", $header);
+		$this->assertContains('function asynchronouscallback() {', $header);
 		$this->assertContains("script.src = 'http://maps.googleapis.com/maps/api/js?key=123456&sensor=true&callback=asynchronouscallback", $header);
 		$this->assertContains('window.onload=', $header);
 

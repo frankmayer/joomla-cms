@@ -169,13 +169,13 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 			->order('a.id');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT a.id" .
-			PHP_EOL . "FROM a" .
-			PHP_EOL . "INNER JOIN b ON b.id = a.id" .
-			PHP_EOL . "WHERE b.id = 1" .
-			PHP_EOL . "GROUP BY a.id" .
-			PHP_EOL . "HAVING COUNT(a.id) > 3" .
-			PHP_EOL . "ORDER BY a.id",
+			PHP_EOL . 'SELECT a.id' .
+			PHP_EOL . 'FROM a' .
+			PHP_EOL . 'INNER JOIN b ON b.id = a.id' .
+			PHP_EOL . 'WHERE b.id = 1' .
+			PHP_EOL . 'GROUP BY a.id' .
+			PHP_EOL . 'HAVING COUNT(a.id) > 3' .
+			PHP_EOL . 'ORDER BY a.id',
 			(string) $q,
 			'Tests for correct rendering.'
 		);
@@ -198,10 +198,10 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 			->where('b.id = 1');
 
 		$this->assertEquals(
-			PHP_EOL . "UPDATE #__foo AS a" .
-			PHP_EOL . "SET a.id = 2" .
-			PHP_EOL . "FROM b" .
-			PHP_EOL . "WHERE b.id = 1 AND b.id = a.id",
+			PHP_EOL . 'UPDATE #__foo AS a' .
+			PHP_EOL . 'SET a.id = 2' .
+			PHP_EOL . 'FROM b' .
+			PHP_EOL . 'WHERE b.id = 1 AND b.id = a.id',
 			(string) $q
 		);
 	}
@@ -220,7 +220,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->year($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (YEAR FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (YEAR FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -239,7 +239,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->month($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (MONTH FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (MONTH FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -258,7 +258,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->day($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (DAY FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (DAY FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -277,7 +277,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->hour($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (HOUR FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (HOUR FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -296,7 +296,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->minute($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (MINUTE FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (MINUTE FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -315,7 +315,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->select($q->second($q->quoteName('col')))->from('table');
 
 		$this->assertEquals(
-			PHP_EOL . "SELECT EXTRACT (SECOND FROM \"col\")" . PHP_EOL . "FROM table",
+			PHP_EOL . 'SELECT EXTRACT (SECOND FROM "col")' . PHP_EOL . 'FROM table',
 			(string) $q
 		);
 	}
@@ -336,7 +336,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->insert('table')->columns('col')->values($subq);
 
 		$this->assertEquals(
-			PHP_EOL . "INSERT INTO table" . PHP_EOL . "(col)" . PHP_EOL . "(" . PHP_EOL . "SELECT col2" . PHP_EOL . "WHERE a=1)",
+			PHP_EOL . 'INSERT INTO table' . PHP_EOL . '(col)' . PHP_EOL . '(' . PHP_EOL . 'SELECT col2' . PHP_EOL . 'WHERE a=1)',
 			(string) $q
 		);
 
@@ -344,7 +344,7 @@ class JDatabaseQueryPostgresqlTest extends TestCase
 		$q->insert('table')->columns('col')->values('3');
 
 		$this->assertEquals(
-			PHP_EOL . "INSERT INTO table" . PHP_EOL . "(col) VALUES " . PHP_EOL . "(3)",
+			PHP_EOL . 'INSERT INTO table' . PHP_EOL . '(col) VALUES ' . PHP_EOL . '(3)',
 			(string) $q
 		);
 	}

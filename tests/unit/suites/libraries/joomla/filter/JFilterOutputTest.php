@@ -27,9 +27,9 @@ class FilterTestObject
 	 */
 	public function __construct()
 	{
-		$this->string1 = "<script>alert();</script>";
-		$this->string2 = "This is a test.";
-		$this->string3 = "<script>alert(3);</script>";
+		$this->string1 = '<script>alert();</script>';
+		$this->string2 = 'This is a test.';
+		$this->string3 = '<script>alert(3);</script>';
 		$this->array1 = array(1, 2, 3);
 	}
 }
@@ -93,9 +93,9 @@ class JFilterOutputTest extends PHPUnit_Framework_TestCase
 	public function testObjectHTMLSafe()
 	{
 		$this->object->objectHTMLSafe($this->safeObject, null, 'string3');
-		$this->assertEquals('&lt;script&gt;alert();&lt;/script&gt;', $this->safeObject->string1, "Script tag should be defused");
-		$this->assertEquals('This is a test.', $this->safeObject->string2, "Plain text should pass");
-		$this->assertEquals('<script>alert(3);</script>', $this->safeObject->string3, "This Script tag should be passed");
+		$this->assertEquals('&lt;script&gt;alert();&lt;/script&gt;', $this->safeObject->string1, 'Script tag should be defused');
+		$this->assertEquals('This is a test.', $this->safeObject->string2, 'Plain text should pass');
+		$this->assertEquals('<script>alert(3);</script>', $this->safeObject->string3, 'This Script tag should be passed');
 	}
 
 	/**
@@ -106,9 +106,9 @@ class JFilterOutputTest extends PHPUnit_Framework_TestCase
 	public function testObjectHTMLSafeWithArray()
 	{
 		$this->object->objectHTMLSafe($this->safeObject, null, array('string1', 'string3'));
-		$this->assertEquals('<script>alert();</script>', $this->safeObject->string1, "Script tag should pass array test");
-		$this->assertEquals('This is a test.', $this->safeObject->string2, "Plain text should pass array test");
-		$this->assertEquals('<script>alert(3);</script>', $this->safeObject->string3, "This Script tag should pass array test");
+		$this->assertEquals('<script>alert();</script>', $this->safeObject->string1, 'Script tag should pass array test');
+		$this->assertEquals('This is a test.', $this->safeObject->string2, 'Plain text should pass array test');
+		$this->assertEquals('<script>alert(3);</script>', $this->safeObject->string3, 'This Script tag should pass array test');
 	}
 
 	/**

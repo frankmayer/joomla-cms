@@ -335,22 +335,22 @@ class JPaginationTest extends TestCase
 		$object = $pagination->getData();
 
 		// Test the view all Object
-		$this->assertEquals((array) $object->all, $expected["0"], 'This is not the expected view all');
+		$this->assertEquals((array) $object->all, $expected['0'], 'This is not the expected view all');
 
 		// Test the start Object
-		$this->assertEquals((array) $object->start, $expected["1"], 'This is not the expected start');
+		$this->assertEquals((array) $object->start, $expected['1'], 'This is not the expected start');
 
 		// Test the previous Object
-		$this->assertEquals((array) $object->previous, $expected["2"], 'This is not the expected previous');
+		$this->assertEquals((array) $object->previous, $expected['2'], 'This is not the expected previous');
 
 		// Test the next Object
-		$this->assertEquals((array) $object->next, $expected["3"], 'This is not the expected next');
+		$this->assertEquals((array) $object->next, $expected['3'], 'This is not the expected next');
 
 		// Test the end Object
-		$this->assertEquals((array) $object->end, $expected["4"], 'This is not the expected end');
+		$this->assertEquals((array) $object->end, $expected['4'], 'This is not the expected end');
 
 		// Test the active object
-		$this->assertEquals((array) $object->pages[$active], $expected["5"], 'This is not the expected active');
+		$this->assertEquals((array) $object->pages[$active], $expected['5'], 'This is not the expected active');
 
 		unset($pagination);
 	}
@@ -773,22 +773,22 @@ class JPaginationTest extends TestCase
 		$object = TestReflection::invoke($pagination, '_buildDataObject');
 
 		// Test the view all Object
-		$this->assertEquals((array) $object->all, $expected["0"], 'This is not the expected view all');
+		$this->assertEquals((array) $object->all, $expected['0'], 'This is not the expected view all');
 
 		// Test the start Object
-		$this->assertEquals((array) $object->start, $expected["1"], 'This is not the expected start');
+		$this->assertEquals((array) $object->start, $expected['1'], 'This is not the expected start');
 
 		// Test the previous Object
-		$this->assertEquals((array) $object->previous, $expected["2"], 'This is not the expected previous');
+		$this->assertEquals((array) $object->previous, $expected['2'], 'This is not the expected previous');
 
 		// Test the next Object
-		$this->assertEquals((array) $object->next, $expected["3"], 'This is not the expected next');
+		$this->assertEquals((array) $object->next, $expected['3'], 'This is not the expected next');
 
 		// Test the end Object
-		$this->assertEquals((array) $object->end, $expected["4"], 'This is not the expected end');
+		$this->assertEquals((array) $object->end, $expected['4'], 'This is not the expected end');
 
 		// Test the active object
-		$this->assertEquals((array) $object->pages[$active], $expected["5"], 'This is not the expected active');
+		$this->assertEquals((array) $object->pages[$active], $expected['5'], 'This is not the expected active');
 
 		unset($pagination);
 	}

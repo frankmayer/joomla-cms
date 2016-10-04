@@ -89,8 +89,8 @@ XML;
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
+		$key = 'app_key';
+		$secret = 'app_secret';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 

@@ -77,9 +77,9 @@ class JFacebookStatusTest extends TestCase
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$app_id = "app_id";
-		$app_secret = "app_secret";
-		$my_url = "http://localhost/gsoc/joomla-platform/facebook_test.php";
+		$app_id = 'app_id';
+		$app_secret = 'app_secret';
+		$my_url = 'http://localhost/gsoc/joomla-platform/facebook_test.php';
 		$access_token = array(
 			'access_token' => 'token',
 			'expires' => '51837673', 'created' => '2443672521');

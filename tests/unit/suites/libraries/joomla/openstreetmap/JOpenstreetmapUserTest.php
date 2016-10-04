@@ -89,8 +89,8 @@ XML;
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
+		$key = 'app_key';
+		$secret = 'app_secret';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -239,7 +239,7 @@ XML;
 	public function testReplacePreferences()
 	{
 
-		$preferences = array("A" => "a");
+		$preferences = array('A' => 'a');
 
 		$returnData = new stdClass;
 		$returnData->code = 200;
@@ -269,7 +269,7 @@ XML;
 	public function testReplacePreferencesFailure()
 	{
 
-		$preferences = array("A" => "a");
+		$preferences = array('A' => 'a');
 
 		$returnData = new stdClass;
 		$returnData->code = 500;
@@ -295,8 +295,8 @@ XML;
 	public function testChangePreference()
 	{
 
-		$key = "A";
-		$preference = "a";
+		$key = 'A';
+		$preference = 'a';
 
 		$returnData = new stdClass;
 		$returnData->code = 200;
@@ -326,8 +326,8 @@ XML;
 	public function testChangePreferenceFailure()
 	{
 
-		$key = "A";
-		$preference = "a";
+		$key = 'A';
+		$preference = 'a';
 
 		$returnData = new stdClass;
 		$returnData->code = 500;

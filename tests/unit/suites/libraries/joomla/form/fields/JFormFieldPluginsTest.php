@@ -56,7 +56,7 @@ class JFormFieldPluginsTest extends TestCaseDatabase
 
 		$this->assertThat(
 			$field->folder,
-			$this->equalTo("editors"),
+			$this->equalTo('editors'),
 			'Line:' . __LINE__ . ' The property should be computed from the XML.'
 		);
 	}

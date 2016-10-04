@@ -238,7 +238,7 @@ class JMicrodataTest extends PHPUnit_Framework_TestCase
 		);
 
 		// Test for a 'meta' display with human $content and $machineContent
-		$machineContent = "2011-01-01T00:00:00+00:00";
+		$machineContent = '2011-01-01T00:00:00+00:00';
 		$response = $this->handler
 			->property('datePublished')
 			->content($content, $machineContent)
@@ -547,7 +547,7 @@ class JMicrodataTest extends PHPUnit_Framework_TestCase
 		// Test the displayScope() function when the library is disabled
 		$this->assertEquals(
 			$this->handler->enable(false)->displayScope(),
-			""
+			''
 		);
 	}
 

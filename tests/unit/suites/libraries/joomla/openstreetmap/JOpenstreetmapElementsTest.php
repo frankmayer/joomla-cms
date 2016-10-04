@@ -89,8 +89,8 @@ XML;
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
+		$key = 'app_key';
+		$secret = 'app_secret';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -139,7 +139,7 @@ XML;
 		$changeset = '123';
 		$latitude = '2';
 		$longitude = '2';
-		$tags = array("A" => "a","B" => "b");
+		$tags = array('A' => 'a', 'B' => 'b');
 
 		$returnData = new stdClass;
 		$returnData->code = 200;
@@ -171,7 +171,7 @@ XML;
 		$changeset = '123';
 		$latitude = '2';
 		$longitude = '2';
-		$tags = array("A" => "a","B" => "b");
+		$tags = array('A' => 'a', 'B' => 'b');
 
 		$returnData = new stdClass;
 		$returnData->code = 500;
@@ -197,8 +197,8 @@ XML;
 	public function testCreateWay()
 	{
 		$changeset = '123';
-		$tags = array("A" => "a","B" => "b");
-		$nds = array("a", "b");
+		$tags = array('A' => 'a', 'B' => 'b');
+		$nds = array('a', 'b');
 
 		$returnData = new stdClass;
 		$returnData->code = 200;
@@ -228,8 +228,8 @@ XML;
 	public function testCreateWayFailure()
 	{
 		$changeset = '123';
-		$tags = array("A" => "a","B" => "b");
-		$nds = array("a", "b");
+		$tags = array('A' => 'a', 'B' => 'b');
+		$nds = array('a', 'b');
 
 		$returnData = new stdClass;
 		$returnData->code = 500;
@@ -255,8 +255,8 @@ XML;
 	public function testCreateRelation()
 	{
 		$changeset = '123';
-		$tags = array("A" => "a","B" => "b");
-		$members = array(array("type" => "node","role" => "stop","ref" => "123"),array("type" => "way","ref" => "123"));
+		$tags = array('A' => 'a', 'B' => 'b');
+		$members = array(array('type' => 'node', 'role' => 'stop', 'ref' => '123'), array('type' => 'way', 'ref' => '123'));
 
 		$returnData = new stdClass;
 		$returnData->code = 200;
@@ -286,8 +286,8 @@ XML;
 	public function testCreateRelationFailure()
 	{
 		$changeset = '123';
-		$tags = array("A" => "a","B" => "b");
-		$members = array(array("type" => "node","role" => "stop","ref" => "123"),array("type" => "way","ref" => "123"));
+		$tags = array('A' => 'a', 'B' => 'b');
+		$members = array(array('type' => 'node', 'role' => 'stop', 'ref' => '123'), array('type' => 'way', 'ref' => '123'));
 
 		$returnData = new stdClass;
 		$returnData->code = 500;
@@ -711,7 +711,7 @@ XML;
 		$returnData->body = $this->sampleXml;
 		$returnData->$single_element = new SimpleXMLElement($this->sampleXml);
 
-		$path = $element . '?' . $element . "=" . $params;
+		$path = $element . '?' . $element . '=' . $params;
 
 		$this->client->expects($this->once())
 		->method('get')
@@ -745,7 +745,7 @@ XML;
 		$returnData->body = $this->errorString;
 		$returnData->$single_element = new SimpleXMLElement($this->sampleXml);
 
-		$path = $element . '?' . $element . "=" . $params;
+		$path = $element . '?' . $element . '=' . $params;
 
 		$this->client->expects($this->any())
 		->method('get')

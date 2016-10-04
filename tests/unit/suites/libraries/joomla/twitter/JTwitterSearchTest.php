@@ -101,9 +101,9 @@ class JTwitterSearchTest extends TestCase
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
-		$my_url = "http://127.0.0.1/gsoc/joomla-platform/twitter_test.php";
+		$key = 'app_key';
+		$secret = 'app_secret';
+		$my_url = 'http://127.0.0.1/gsoc/joomla-platform/twitter_test.php';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -166,7 +166,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->searchRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "search"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'search'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -219,7 +219,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->searchRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "search"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'search'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -256,7 +256,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -294,7 +294,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -330,7 +330,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -370,7 +370,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -466,7 +466,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -506,7 +506,7 @@ class JTwitterSearchTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->savedSearchesRateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "saved_searches"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'saved_searches'));
 
 		$this->client->expects($this->at(0))
 		->method('get')

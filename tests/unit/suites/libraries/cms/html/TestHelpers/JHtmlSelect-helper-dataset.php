@@ -95,7 +95,7 @@ class JHtmlSelectTest_DataSet
 				array(
 					'value' => '1',
 					'text' => 'Yes',
-					'id' => "yesId",
+					'id' => 'yesId',
 				),
 				array(
 					'value' => '0',
@@ -106,7 +106,7 @@ class JHtmlSelectTest_DataSet
 					'text' => 'Maybe',
 				),
 			),
-			"myRadioListName"
+			'myRadioListName'
 		),
 		array(
 			"<div class=\"controls\">
@@ -124,14 +124,14 @@ class JHtmlSelectTest_DataSet
 				array(
 					'key' => 'foo',
 					'val' => 'FOO',
-					'id' => "fooId",
+					'id' => 'fooId',
 				),
 				array(
 					'key' => 'bar',
 					'val' => 'BAR',
 				),
 			),
-			"myFooBarListName",
+			'myFooBarListName',
 			array(
 				'class' => 'i am radio',
 				'onchange' => 'jsfunc();',
@@ -200,7 +200,7 @@ class JHtmlSelectTest_DataSet
 					'text' => '&nbsp;Test -         ',
 					'label' => 'My Label',
 					'id' => 'myId',
-					'attrs' => array('class' => "foo bar",'style' => 'color:red;',),
+					'attrs' => array('class' => 'foo bar', 'style' => 'color:red;',),
 				),
 			),
 			array(
@@ -258,7 +258,7 @@ class JHtmlSelectTest_DataSet
 				'option.attr' => 'class',
 				'attr' => 'foo bar',
 				'option.label' => 'lebal',
-				'label' => "My Label",
+				'label' => 'My Label',
 				'option.key' => 'optionValue',
 				'option.text' => 'optionText',
 			),

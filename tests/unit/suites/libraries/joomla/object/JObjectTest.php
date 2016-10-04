@@ -75,12 +75,12 @@ class JObjectTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testDef()
 	{
-		$this->o->def("check");
-		$this->assertEquals(null, $this->o->def("check"));
-		$this->o->def("check", "paint");
-		$this->o->def("check", "forced");
-		$this->assertEquals("paint", $this->o->def("check"));
-		$this->assertNotEquals("forced", $this->o->def("check"));
+		$this->o->def('check');
+		$this->assertEquals(null, $this->o->def('check'));
+		$this->o->def('check', 'paint');
+		$this->o->def('check', 'forced');
+		$this->assertEquals('paint', $this->o->def('check'));
+		$this->assertNotEquals('forced', $this->o->def('check'));
 	}
 
 	/**
@@ -211,9 +211,9 @@ class JObjectTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testSet()
 	{
-		$this->assertEquals(null, $this->o->set("foo", "imintheair"));
-		$this->assertEquals("imintheair", $this->o->set("foo", "nojibberjabber"));
-		$this->assertEquals("nojibberjabber", $this->o->foo);
+		$this->assertEquals(null, $this->o->set('foo', 'imintheair'));
+		$this->assertEquals('imintheair', $this->o->set('foo', 'nojibberjabber'));
+		$this->assertEquals('nojibberjabber', $this->o->foo);
 	}
 
 	/**
@@ -225,12 +225,12 @@ class JObjectTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testSetProperties()
 	{
-		$a = array("foo" => "ghost", "knife" => "stewie");
-		$f = "foo";
+		$a = array('foo' => 'ghost', 'knife' => 'stewie');
+		$f = 'foo';
 		$this->assertEquals(true, $this->o->setProperties($a));
 		$this->assertEquals(false, $this->o->setProperties($f));
-		$this->assertEquals("ghost", $this->o->foo);
-		$this->assertEquals("stewie", $this->o->knife);
+		$this->assertEquals('ghost', $this->o->foo);
+		$this->assertEquals('stewie', $this->o->knife);
 	}
 
 	/**

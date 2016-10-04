@@ -93,9 +93,9 @@ class JTwitterBlockTest extends TestCase
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
-		$my_url = "http://127.0.0.1/gsoc/joomla-platform/twitter_test.php";
+		$key = 'app_key';
+		$secret = 'app_secret';
+		$my_url = 'http://127.0.0.1/gsoc/joomla-platform/twitter_test.php';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -149,7 +149,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -193,7 +193,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -253,7 +253,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -315,7 +315,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -373,7 +373,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -435,7 +435,7 @@ class JTwitterBlockTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "blocks"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'blocks'));
 
 		$this->client->expects($this->at(0))
 		->method('get')

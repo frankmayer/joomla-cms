@@ -203,7 +203,7 @@ class JGoogleEmbedAnalyticsTest extends TestCase
 
 		$this->object->useSync();
 		$output = $this->object->createCall('method', array(false));
-		$this->assertEquals($output, "pageTracker.method(false);");
+		$this->assertEquals($output, 'pageTracker.method(false);');
 	}
 
 	/**

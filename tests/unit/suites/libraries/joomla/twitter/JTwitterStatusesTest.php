@@ -97,9 +97,9 @@ class JTwitterStatusesTest extends TestCase
 		$_SERVER['REQUEST_URI'] = '/index.php';
 		$_SERVER['SCRIPT_NAME'] = '/index.php';
 
-		$key = "app_key";
-		$secret = "app_secret";
-		$my_url = "http://127.0.0.1/gsoc/joomla-platform/twitter_test.php";
+		$key = 'app_key';
+		$secret = 'app_secret';
+		$my_url = 'http://127.0.0.1/gsoc/joomla-platform/twitter_test.php';
 
 		$access_token = array('key' => 'token_key', 'secret' => 'token_secret');
 
@@ -155,7 +155,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -202,7 +202,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -265,7 +265,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -331,7 +331,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -461,7 +461,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -512,7 +512,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -557,7 +557,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -606,7 +606,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -648,7 +648,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -696,7 +696,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -738,7 +738,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -784,7 +784,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -943,8 +943,8 @@ class JTwitterStatusesTest extends TestCase
 	{
 		// User ID or screen name
 		return array(
-			array(array("x-mediaratelimit-remaining" => 10)),
-			array(array("x-mediaratelimit-remaining" => 0, "x-mediaratelimit-reset" => 1243245654))
+			array(array('x-mediaratelimit-remaining' => 10)),
+			array(array('x-mediaratelimit-remaining' => 0, 'x-mediaratelimit-reset' => 1243245654))
 			);
 	}
 
@@ -1056,7 +1056,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')
@@ -1122,7 +1122,7 @@ class JTwitterStatusesTest extends TestCase
 		$returnData->code = 200;
 		$returnData->body = $this->rateLimit;
 
-		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array("resources" => "statuses"));
+		$path = $this->object->fetchUrl('/application/rate_limit_status.json', array('resources' => 'statuses'));
 
 		$this->client->expects($this->at(0))
 		->method('get')

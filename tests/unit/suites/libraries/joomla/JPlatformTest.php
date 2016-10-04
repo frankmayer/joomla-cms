@@ -128,7 +128,7 @@ class JPlatformTest extends PHPUnit_Framework_TestCase
 	{
 		if (!method_exists('JPlatform', '__set_state'))
 		{
-			$this->markTestSkipped("Method JPlatform::__set_state() does not exist - skipping");
+			$this->markTestSkipped('Method JPlatform::__set_state() does not exist - skipping');
 		}
 		$testData = array(
 			'PRODUCT'    => 'Joomla!',

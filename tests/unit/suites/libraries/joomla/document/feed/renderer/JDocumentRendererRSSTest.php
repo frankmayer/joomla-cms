@@ -43,7 +43,7 @@ class JDocumentRendererRSSTest extends TestCase
 		parent::setUp();
 		$this->backupServer = $_SERVER;
 
-		$this->markTestSkipped("Too tightly coupled to internals to be testable now");
+		$this->markTestSkipped('Too tightly coupled to internals to be testable now');
 
 		$this->saveFactoryState();
 

@@ -56,7 +56,7 @@ class JDocumentHtmlTest extends TestCase
 			'text/javascript' => "window.addEvent('load', function() { new JCaption('img.caption'); });"
 		),
 		'custom' => array(
-			"<script>var html5 = true;</script>"
+			'<script>var html5 = true;</script>'
 		),
 	    'scriptText' => array(
 		    'JYES'

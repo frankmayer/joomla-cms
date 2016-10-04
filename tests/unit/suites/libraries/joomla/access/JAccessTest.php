@@ -341,12 +341,12 @@ class JAccessTest extends TestCaseDatabase
 </access>',
 				"/access/section[@name='component']/",
 				array(
-					(object) array('name' => "core.admin", 'title' => "JACTION_ADMIN", 'description' => "JACTION_ADMIN_COMPONENT_DESC"),
-					(object) array('name' => "core.manage", 'title' => "JACTION_MANAGE", 'description' => "JACTION_MANAGE_COMPONENT_DESC"),
-					(object) array('name' => "core.create", 'title' => "JACTION_CREATE", 'description' => "JACTION_CREATE_COMPONENT_DESC"),
-					(object) array('name' => "core.delete", 'title' => "JACTION_DELETE", 'description' => "JACTION_DELETE_COMPONENT_DESC"),
-					(object) array('name' => "core.edit", 'title' => "JACTION_EDIT", 'description' => "JACTION_EDIT_COMPONENT_DESC"),
-					(object) array('name' => "core.edit.state", 'title' => "JACTION_EDITSTATE", 'description' => "JACTION_EDITSTATE_COMPONENT_DESC")),
+					(object) array('name' => 'core.admin', 'title' => 'JACTION_ADMIN', 'description' => 'JACTION_ADMIN_COMPONENT_DESC'),
+					(object) array('name' => 'core.manage', 'title' => 'JACTION_MANAGE', 'description' => 'JACTION_MANAGE_COMPONENT_DESC'),
+					(object) array('name' => 'core.create', 'title' => 'JACTION_CREATE', 'description' => 'JACTION_CREATE_COMPONENT_DESC'),
+					(object) array('name' => 'core.delete', 'title' => 'JACTION_DELETE', 'description' => 'JACTION_DELETE_COMPONENT_DESC'),
+					(object) array('name' => 'core.edit', 'title' => 'JACTION_EDIT', 'description' => 'JACTION_EDIT_COMPONENT_DESC'),
+					(object) array('name' => 'core.edit.state', 'title' => 'JACTION_EDITSTATE', 'description' => 'JACTION_EDITSTATE_COMPONENT_DESC')),
 				'Unable to get actions from the component section.'),
 			array(
 				'<access component="com_banners">
@@ -437,12 +437,12 @@ class JAccessTest extends TestCaseDatabase
 			JAccess::getActionsFromFile(JPATH_TESTS . '/tmp/access/access.xml'),
 			$this->equalTo(
 				array(
-					(object) array('name' => "core.admin", 'title' => "JACTION_ADMIN", 'description' => "JACTION_ADMIN_COMPONENT_DESC"),
-					(object) array('name' => "core.manage", 'title' => "JACTION_MANAGE", 'description' => "JACTION_MANAGE_COMPONENT_DESC"),
-					(object) array('name' => "core.create", 'title' => "JACTION_CREATE", 'description' => "JACTION_CREATE_COMPONENT_DESC"),
-					(object) array('name' => "core.delete", 'title' => "JACTION_DELETE", 'description' => "JACTION_DELETE_COMPONENT_DESC"),
-					(object) array('name' => "core.edit", 'title' => "JACTION_EDIT", 'description' => "JACTION_EDIT_COMPONENT_DESC"),
-					(object) array('name' => "core.edit.state", 'title' => "JACTION_EDITSTATE", 'description' => "JACTION_EDITSTATE_COMPONENT_DESC")
+					(object) array('name' => 'core.admin', 'title' => 'JACTION_ADMIN', 'description' => 'JACTION_ADMIN_COMPONENT_DESC'),
+					(object) array('name' => 'core.manage', 'title' => 'JACTION_MANAGE', 'description' => 'JACTION_MANAGE_COMPONENT_DESC'),
+					(object) array('name' => 'core.create', 'title' => 'JACTION_CREATE', 'description' => 'JACTION_CREATE_COMPONENT_DESC'),
+					(object) array('name' => 'core.delete', 'title' => 'JACTION_DELETE', 'description' => 'JACTION_DELETE_COMPONENT_DESC'),
+					(object) array('name' => 'core.edit', 'title' => 'JACTION_EDIT', 'description' => 'JACTION_EDIT_COMPONENT_DESC'),
+					(object) array('name' => 'core.edit.state', 'title' => 'JACTION_EDITSTATE', 'description' => 'JACTION_EDITSTATE_COMPONENT_DESC')
 				)
 			),
 			'Line:' . __LINE__ . ' Getting actions from an xml file must return correct array.'

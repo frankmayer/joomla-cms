@@ -110,7 +110,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 					array(
 						'value' => '1',
 						'text' => 'Yes',
-						'id' => "yesId",
+						'id' => 'yesId',
 					),
 					array(
 						'value' => '0',
@@ -121,7 +121,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 						'text' => 'Maybe',
 					),
 				),
-				"myRadioListName"
+				'myRadioListName'
 			),
 			array(
 				"<div class=\"controls\">\n\t" .
@@ -136,14 +136,14 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 					array(
 						'key' => 'foo',
 						'val' => 'FOO',
-						'id' => "fooId",
+						'id' => 'fooId',
 					),
 					array(
 						'key' => 'bar',
 						'val' => 'BAR',
 					),
 				),
-				"myFooBarListName",
+				'myFooBarListName',
 				array(
 					'class' => 'i am radio',
 					'onchange' => 'jsfunc();',
@@ -222,7 +222,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 						'text' => '-&nbsp;Test -',
 						'label' => 'My Label',
 						'id' => 'myId',
-						'attrs' => array('class' => "foo bar",'style' => 'color:red;',),
+						'attrs' => array('class' => 'foo bar', 'style' => 'color:red;',),
 					),
 				),
 				array(
@@ -290,7 +290,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 					'option.attr' => 'class',
 					'attr' => 'foo bar',
 					'option.label' => 'lebal',
-					'label' => "My Label",
+					'label' => 'My Label',
 					'option.key' => 'optionValue',
 					'option.text' => 'optionText',
 				),

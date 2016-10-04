@@ -88,17 +88,19 @@ class TestMockApplicationCms extends TestMockApplicationWeb
 		$methods = self::getMethods();
 
 		if (isset($options))
-		// Create the mock.
-		$mockObject = $test->getMock(
-			'JApplicationCms',
-			$methods,
-			// Constructor arguments.
-			$constructor,
-			// Mock class name.
-			'',
-			// Call original constructor.
-			true
-		);
+		{
+			// Create the mock.
+			$mockObject = $test->getMock(
+				'JApplicationCms',
+				$methods,
+				// Constructor arguments.
+				$constructor,
+				// Mock class name.
+				'',
+				// Call original constructor.
+				true
+			);
+		}
 
 		$mockObject = self::addBehaviours($test, $mockObject, $options);
 
