@@ -106,7 +106,7 @@ class JArchiveZipTest extends JArchiveTestCase
 	public function testHasNativeSupport()
 	{
 		$this->assertEquals(
-			(function_exists('zip_open') && function_exists('zip_read')),
+			function_exists('zip_open') && function_exists('zip_read'),
 			JArchiveZip::hasNativeSupport()
 		);
 	}
@@ -121,7 +121,7 @@ class JArchiveZipTest extends JArchiveTestCase
 	public function testIsSupported()
 	{
 		$this->assertEquals(
-			(JArchiveZip::hasNativeSupport() || extension_loaded('zlib')),
+			JArchiveZip::hasNativeSupport() || extension_loaded('zlib'),
 			JArchiveZip::isSupported()
 		);
 	}

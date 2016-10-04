@@ -280,7 +280,7 @@ class JFormTest extends TestCaseDatabase
 		$form = new JFormInspector('form1');
 
 		$this->assertThat(
-			($form instanceof JForm),
+			$form instanceof JForm,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' The JForm constuctor should return a JForm object.'
 		);
@@ -1392,7 +1392,7 @@ class JFormTest extends TestCaseDatabase
 		);
 
 		$this->assertThat(
-			($form->getXml() instanceof SimpleXMLElement),
+			$form->getXml() instanceof SimpleXMLElement,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' The internal XML should be a SimpleXMLElement object.'
 		);
@@ -1461,7 +1461,7 @@ class JFormTest extends TestCaseDatabase
 		for ($i = 0; $i < count($originalset); $i++)
 		{
 			$this->assertThat(
-				(string) ($originalset[$i]->attributes()->name) == (string) ($set[$i]->attributes()->name),
+				(string) $originalset[$i]->attributes()->name == (string) $set[$i]->attributes()->name,
 				$this->isTrue(),
 				'Line:' . __LINE__ . ' Replace should leave fields in the original order.'
 			);
@@ -1631,7 +1631,7 @@ class JFormTest extends TestCaseDatabase
 		);
 
 		$this->assertThat(
-			($inspector->loadFieldType('list') instanceof JFormFieldList),
+			$inspector->loadFieldType('list') instanceof JFormFieldList,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' loadFieldType should return the correct class.'
 		);
@@ -1640,25 +1640,25 @@ class JFormTest extends TestCaseDatabase
 		JForm::addFieldPath(__DIR__ . '/_testfields');
 
 		$this->assertThat(
-			($inspector->loadFieldType('test') instanceof JFormFieldTest),
+			$inspector->loadFieldType('test') instanceof JFormFieldTest,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' loadFieldType should return the correct custom class.'
 		);
 
 		$this->assertThat(
-			($inspector->loadFieldType('foo.bar') instanceof FooFormFieldBar),
+			$inspector->loadFieldType('foo.bar') instanceof FooFormFieldBar,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' loadFieldType should return the correct custom class.'
 		);
 
 		$this->assertThat(
-			($inspector->loadFieldType('modal_foo') instanceof JFormFieldModal_Foo),
+			$inspector->loadFieldType('modal_foo') instanceof JFormFieldModal_Foo,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' loadFieldType should return the correct custom class.'
 		);
 
 		$this->assertThat(
-			($inspector->loadFieldType('foo.modal_bar') instanceof FooFormFieldModal_Bar),
+			$inspector->loadFieldType('foo.modal_bar') instanceof FooFormFieldModal_Bar,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' loadFieldType should return the correct custom class.'
 		);
@@ -1698,7 +1698,7 @@ class JFormTest extends TestCaseDatabase
 		);
 
 		$this->assertThat(
-			($form->getXml() instanceof SimpleXMLElement),
+			$form->getXml() instanceof SimpleXMLElement,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' XML string should parse successfully.'
 		);
@@ -1715,7 +1715,7 @@ class JFormTest extends TestCaseDatabase
 		);
 
 		$this->assertThat(
-			($form->getXml() instanceof SimpleXMLElement),
+			$form->getXml() instanceof SimpleXMLElement,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' XML string should parse successfully.'
 		);
@@ -1743,7 +1743,7 @@ class JFormTest extends TestCaseDatabase
 		JForm::addRulePath(__DIR__ . '/_testrules');
 
 		$this->assertThat(
-			($form->loadRuleType('custom') instanceof JFormRule),
+			$form->loadRuleType('custom') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading a known rule should return a rule object.'
 		);
@@ -1751,49 +1751,49 @@ class JFormTest extends TestCaseDatabase
 		// Test all the stock rules load.
 
 		$this->assertThat(
-			($form->loadRuleType('boolean') instanceof JFormRule),
+			$form->loadRuleType('boolean') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the boolean rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('email') instanceof JFormRule),
+			$form->loadRuleType('email') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the email rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('equals') instanceof JFormRule),
+			$form->loadRuleType('equals') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the equals rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('rules') instanceof JFormRule),
+			$form->loadRuleType('rules') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the [access control] rules rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('username') instanceof JFormRule),
+			$form->loadRuleType('username') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the username rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('options') instanceof JFormRule),
+			$form->loadRuleType('options') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the options rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('color') instanceof JFormRule),
+			$form->loadRuleType('color') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the color rule should return a rule object.'
 		);
 
 		$this->assertThat(
-			($form->loadRuleType('tel') instanceof JFormRule),
+			$form->loadRuleType('tel') instanceof JFormRule,
 			$this->isTrue(),
 			'Line:' . __LINE__ . ' Loading the tel rule should return a rule object.'
 		);

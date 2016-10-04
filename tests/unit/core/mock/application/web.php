@@ -106,14 +106,14 @@ class TestMockApplicationWeb extends TestMockApplicationBase
 		$test->assignMockCallbacks(
 			$mockObject,
 			array(
-				'appendBody' => array((is_callable(array($test, 'mockAppendBody')) ? $test : get_called_class()), 'mockAppendBody'),
-				'getBody' => array((is_callable(array($test, 'mockGetBody')) ? $test : get_called_class()), 'mockGetBody'),
-				'prependBody' => array((is_callable(array($test, 'mockPrependBody')) ? $test : get_called_class()), 'mockPrependBody'),
-				'setBody' => array((is_callable(array($test, 'mockSetBody')) ? $test : get_called_class()), 'mockSetBody'),
-				'getHeaders' => array((is_callable(array($test, 'mockGetHeaders')) ? $test : get_called_class()), 'mockGetHeaders'),
-				'setHeader' => array((is_callable(array($test, 'mockSetHeader')) ? $test : get_called_class()), 'mockSetHeader'),
-				'clearHeaders' => array((is_callable(array($test, 'mockClearHeaders')) ? $test : get_called_class()), 'mockClearHeaders'),
-				'allowCache' => array((is_callable(array($test, 'mockAllowCache')) ? $test : get_called_class()), 'mockAllowCache'),
+				'appendBody' => array(is_callable(array($test, 'mockAppendBody')) ? $test : get_called_class(), 'mockAppendBody'),
+				'getBody' => array(is_callable(array($test, 'mockGetBody')) ? $test : get_called_class(), 'mockGetBody'),
+				'prependBody' => array(is_callable(array($test, 'mockPrependBody')) ? $test : get_called_class(), 'mockPrependBody'),
+				'setBody' => array(is_callable(array($test, 'mockSetBody')) ? $test : get_called_class(), 'mockSetBody'),
+				'getHeaders' => array(is_callable(array($test, 'mockGetHeaders')) ? $test : get_called_class(), 'mockGetHeaders'),
+				'setHeader' => array(is_callable(array($test, 'mockSetHeader')) ? $test : get_called_class(), 'mockSetHeader'),
+				'clearHeaders' => array(is_callable(array($test, 'mockClearHeaders')) ? $test : get_called_class(), 'mockClearHeaders'),
+				'allowCache' => array(is_callable(array($test, 'mockAllowCache')) ? $test : get_called_class(), 'mockAllowCache'),
 			)
 		);
 

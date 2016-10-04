@@ -240,7 +240,7 @@ class JDatabaseQueryElementTest extends PHPUnit_Framework_TestCase
 
 		$baseElement->testArray = array();
 
-		$cloneElement = clone($baseElement);
+		$cloneElement = clone$baseElement;
 
 		$baseElement->testArray[] = 'a';
 
@@ -261,7 +261,7 @@ class JDatabaseQueryElementTest extends PHPUnit_Framework_TestCase
 
 		$baseElement->testObject = new stdClass;
 
-		$cloneElement = clone($baseElement);
+		$cloneElement = clone$baseElement;
 
 		$this->assertFalse($baseElement === $cloneElement);
 		$this->assertFalse($baseElement->testObject === $cloneElement->testObject);

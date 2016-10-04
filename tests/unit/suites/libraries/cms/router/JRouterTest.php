@@ -811,7 +811,7 @@ class JRouterTest extends TestCase
 
 		$createUriMethod = new ReflectionMethod('JRouter', 'createUri');
 		$createUriMethod->setAccessible(true);
-		$this->assertEquals($expected, (string)($createUriMethod->invoke($this->object, $url)));
+		$this->assertEquals($expected, (string) $createUriMethod->invoke($this->object, $url));
 	}
 
 	/**

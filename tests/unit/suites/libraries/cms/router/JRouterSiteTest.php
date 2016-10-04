@@ -484,7 +484,7 @@ class JRouterSiteTest extends TestCase
 		$object->setMode($mode);
 
 		// Check the expected values
-		$this->assertEquals($expected, (string)($object->build($url)));
+		$this->assertEquals($expected, (string) $object->build($url));
 	}
 
 	/**

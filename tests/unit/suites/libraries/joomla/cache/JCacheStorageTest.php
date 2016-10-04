@@ -121,7 +121,7 @@ class JCacheStorageTest extends TestCase
 					'lifetime' => null,
 					'now' => time(),
 				),
-				($this->available['apc'] ? 'JCacheStorageApc' : false),
+				$this->available['apc'] ? 'JCacheStorageApc' : false,
 			),
 			'defaultapcu' => array(
 				'apcu',
@@ -132,7 +132,7 @@ class JCacheStorageTest extends TestCase
 					'lifetime' => null,
 					'now' => time(),
 				),
-				($this->available['apcu'] ? 'JCacheStorageApcu' : false),
+				$this->available['apcu'] ? 'JCacheStorageApcu' : false,
 			),
 			'defaultcachelite' => array(
 				'cachelite',
@@ -145,7 +145,7 @@ class JCacheStorageTest extends TestCase
 					'caching' => true,
 					'now' => time(),
 				),
-				($this->available['cachelite'] ? 'JCacheStorageCachelite' : false),
+				$this->available['cachelite'] ? 'JCacheStorageCachelite' : false,
 			),
 			'defaultfile' => array(
 				'file',

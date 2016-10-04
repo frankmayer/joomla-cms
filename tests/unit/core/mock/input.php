@@ -87,10 +87,10 @@ class TestMockInput
 		self::$test->assignMockCallbacks(
 			$mockObject,
 			array(
-				'get' => array((is_callable(array(self::$test, 'mockInputGet')) ? self::$test : $this), 'mockInputGet'),
-				'getArray' => array((is_callable(array(self::$test, 'mockInputGetArray')) ? self::$test : $this), 'mockInputGetArray'),
-				'getInt' => array((is_callable(array(self::$test, 'mockInputGetInt')) ? self::$test : $this), 'mockInputGetInt'),
-				'set' => array((is_callable(array(self::$test, 'mockInputSet')) ? self::$test : $this), 'mockInputSet'),
+				'get' => array(is_callable(array(self::$test, 'mockInputGet')) ? self::$test : $this, 'mockInputGet'),
+				'getArray' => array(is_callable(array(self::$test, 'mockInputGetArray')) ? self::$test : $this, 'mockInputGetArray'),
+				'getInt' => array(is_callable(array(self::$test, 'mockInputGetInt')) ? self::$test : $this, 'mockInputGetInt'),
+				'set' => array(is_callable(array(self::$test, 'mockInputSet')) ? self::$test : $this, 'mockInputSet'),
 			)
 		);
 
@@ -115,7 +115,7 @@ class TestMockInput
 		self::$test->assignMockCallbacks(
 			$mockObject,
 			array(
-				'getRaw' => array((is_callable(array(self::$test, 'mockInputGetRaw')) ? self::$test : $this), 'mockInputGetRaw'),
+				'getRaw' => array(is_callable(array(self::$test, 'mockInputGetRaw')) ? self::$test : $this, 'mockInputGetRaw'),
 			)
 		);
 

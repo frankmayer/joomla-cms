@@ -362,7 +362,7 @@ class JUserTest extends TestCaseDatabase
 		);
 
 		$this->assertTrue(
-			(strlen($testUser->password) >= 1 && strlen($testUser->password) <= 100)
+			strlen($testUser->password) >= 1 && strlen($testUser->password) <= 100
 		);
 
 		$array['password2'] = 'password_ok_not_same';

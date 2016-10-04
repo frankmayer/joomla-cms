@@ -1634,7 +1634,7 @@ class JDatabaseQueryTest extends TestCase
 
 		$baseElement->testArray = array();
 
-		$cloneElement = clone($baseElement);
+		$cloneElement = clone$baseElement;
 
 		$baseElement->testArray[] = 'test';
 
@@ -1655,7 +1655,7 @@ class JDatabaseQueryTest extends TestCase
 
 		$baseElement->testObject = new stdClass;
 
-		$cloneElement = clone($baseElement);
+		$cloneElement = clone$baseElement;
 
 		$this->assertFalse($baseElement === $cloneElement);
 

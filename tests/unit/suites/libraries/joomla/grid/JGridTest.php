@@ -83,7 +83,7 @@ class JGridTest extends PHPUnit_Framework_TestCase
 	{
 		$table = new JGrid;
 		$this->assertThat(
-			($table instanceof JGrid),
+			$table instanceof JGrid,
 			$this->isTrue()
 		);
 

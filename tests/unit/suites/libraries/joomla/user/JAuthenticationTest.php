@@ -235,8 +235,8 @@ class JAuthenticationTest extends TestCase
 		$expect->status = JAuthentication::STATUS_SUCCESS;
 
 		$cases[] = array(
-			clone($response),
-			array(clone($expect)),
+			clone$response,
+			array(clone$expect),
 			'Successful login'
 		);
 
@@ -244,8 +244,8 @@ class JAuthenticationTest extends TestCase
 		$expect->status = JAuthentication::STATUS_DENIED;
 
 		$cases[] = array(
-			clone($response),
-			array(clone($expect)),
+			clone$response,
+			array(clone$expect),
 			'Denied (blocked) login'
 		);
 
@@ -253,8 +253,8 @@ class JAuthenticationTest extends TestCase
 		$expect->status = JAuthentication::STATUS_EXPIRED;
 
 		$cases[] = array(
-			clone($response),
-			array(clone($expect)),
+			clone$response,
+			array(clone$expect),
 			'Expired login'
 		);
 
@@ -262,8 +262,8 @@ class JAuthenticationTest extends TestCase
 		$expect->status = JAuthentication::STATUS_UNKNOWN;
 
 		$cases[] = array(
-			clone($response),
-			array(clone($expect)),
+			clone$response,
+			array(clone$expect),
 			'Unknown login'
 		);
 

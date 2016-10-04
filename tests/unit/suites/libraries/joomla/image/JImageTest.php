@@ -520,7 +520,7 @@ class JImageTest extends TestCase
 		// Create a new JImageInspector object from the image handle.
 		$image = new JImageInspector($imageHandle);
 
-		$this->assertTrue(($image->getHeight() == 42), 'Line: ' . __LINE__);
+		$this->assertTrue($image->getHeight() == 42, 'Line: ' . __LINE__);
 	}
 
 	/**
@@ -555,7 +555,7 @@ class JImageTest extends TestCase
 		// Create a new JImageInspector object from the image handle.
 		$image = new JImageInspector($imageHandle);
 
-		$this->assertTrue(($image->getWidth() == 108), 'Line: ' . __LINE__);
+		$this->assertTrue($image->getWidth() == 108, 'Line: ' . __LINE__);
 	}
 
 	/**
@@ -623,7 +623,7 @@ class JImageTest extends TestCase
 		$transparent = new JImageInspector($transparentImage);
 
 		// Assert that the image has transparency.
-		$this->assertTrue(($transparent->isTransparent()));
+		$this->assertTrue($transparent->isTransparent());
 	}
 
 	/**
@@ -643,7 +643,7 @@ class JImageTest extends TestCase
 		$opaque = new JImageInspector($opaqueImage);
 
 		// Assert that the image does not have transparency.
-		$this->assertFalse(($opaque->isTransparent()));
+		$this->assertFalse($opaque->isTransparent());
 	}
 
 	/**
@@ -698,10 +698,10 @@ class JImageTest extends TestCase
 		$white = imagecolorallocate($imageHandle, 255, 255, 255);
 
 		// Draw a red rectangle in the crop area.
-		imagefilledrectangle($imageHandle, $cropLeft, $cropTop, ($cropLeft + $cropWidth), ($cropTop + $cropHeight), $red);
+		imagefilledrectangle($imageHandle, $cropLeft, $cropTop, $cropLeft + $cropWidth, $cropTop + $cropHeight, $red);
 
 		// Draw a white rectangle one pixel inside the crop area.
-		imagefilledrectangle($imageHandle, ($cropLeft + 1), ($cropTop + 1), ($cropLeft + $cropWidth - 2), ($cropTop + $cropHeight - 2), $white);
+		imagefilledrectangle($imageHandle, $cropLeft + 1, $cropTop + 1, $cropLeft + $cropWidth - 2, $cropTop + $cropHeight - 2, $white);
 
 		// Create a new JImageInspector from the image handle.
 		$image = new JImageInspector($imageHandle);
@@ -719,16 +719,16 @@ class JImageTest extends TestCase
 		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), 1, 1));
 
 		// Top/Right
-		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), 0, ($cropHeight - 1)));
-		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), 1, ($cropHeight - 2)));
+		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), 0, $cropHeight - 1));
+		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), 1, $cropHeight - 2));
 
 		// Bottom/Left
-		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), ($cropWidth - 1), 0));
-		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), ($cropWidth - 2), 1));
+		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), $cropWidth - 1, 0));
+		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), $cropWidth - 2, 1));
 
 		// Bottom/Right
-		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), ($cropWidth - 1), ($cropHeight - 1)));
-		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), ($cropWidth - 2), ($cropHeight - 2)));
+		$this->assertEquals($red, imagecolorat($image->getClassProperty('handle'), $cropWidth - 1, $cropHeight - 1));
+		$this->assertEquals($white, imagecolorat($image->getClassProperty('handle'), $cropWidth - 2, $cropHeight - 2));
 	}
 
 	/**
