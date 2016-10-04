@@ -76,9 +76,7 @@ class TestReflection
 		$method = new ReflectionMethod($object, $methodName);
 		$method->setAccessible(true);
 
-		$result = $method->invokeArgs(is_object($object) ? $object : null, $args);
-
-		return $result;
+		return $method->invokeArgs(is_object($object) ? $object : null, $args);
 	}
 
 	/**

@@ -636,9 +636,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				''
 			)
 		);
-		$tests = $cases;
 
-		return $tests;
+		return $cases;
 	}
 
 	/**
@@ -748,9 +747,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From generic cases'
 			),
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -890,9 +888,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From specific cases'
 			),
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -998,9 +995,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From specific cases'
 			)
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -1113,9 +1109,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From specific cases'
 			),
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -1331,9 +1326,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'Test single quote equals inside valid tag'
 			),
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -1432,9 +1426,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From specific cases'
 			),
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**
@@ -1480,9 +1473,8 @@ class JFilterInputTest extends PHPUnit_Framework_TestCase
 				'From specific cases'
 			)
 		);
-		$tests = array_merge($this->casesGeneric(), $casesSpecific);
 
-		return $tests;
+		return array_merge($this->casesGeneric(), $casesSpecific);
 	}
 
 	/**

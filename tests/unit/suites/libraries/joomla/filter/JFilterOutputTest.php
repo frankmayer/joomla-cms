@@ -188,9 +188,8 @@ class JFilterOutputTest extends PHPUnit_Framework_TestCase
 			),
 
 		);
-		$tests = $cases;
 
-		return $tests;
+		return $cases;
 	}
 
 	/**
