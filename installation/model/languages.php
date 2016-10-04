@@ -329,7 +329,7 @@ class InstallationModelLanguages extends JModelBase
 			// If current then set published.
 			$params = JComponentHelper::getParams('com_languages');
 
-			if ($params->get($client->name, 'en-GB') == $row->language)
+			if ($params->get($client->name, 'en-GB') === $row->language)
 			{
 				$row->published = 1;
 			}
@@ -710,13 +710,13 @@ class InstallationModelLanguages extends JModelBase
 			$langs = explode('-', $siteLang->language);
 			$lang  = $langs[0];
 
-			if ($lang == $prefixToFind)
+			if ($lang === $prefixToFind)
 			{
 				++$numberPrefixesFound;
 			}
 		}
 
-		if ($numberPrefixesFound == 1)
+		if ($numberPrefixesFound === 1)
 		{
 			return $prefixToFind;
 		}

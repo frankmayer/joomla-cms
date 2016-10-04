@@ -311,7 +311,7 @@ class InstallationModelDatabase extends JModelBase
 		}
 
 		// @internal Check for spaces in beginning or end of name.
-		if (strlen(trim($options->db_name)) <> strlen($options->db_name))
+		if (strlen(trim($options->db_name)) !== strlen($options->db_name))
 		{
 			JFactory::getApplication()->enqueueMessage(JText::_('INSTL_DATABASE_NAME_INVALID_SPACES'), 'error');
 
@@ -1014,7 +1014,7 @@ class InstallationModelDatabase extends JModelBase
 			$query = trim($query);
 
 			// If the query isn't empty and is not a MySQL or PostgreSQL comment, execute it.
-			if (!empty($query) && ($query{0} != '#') && ($query{0} != '-'))
+			if (!empty($query) && ($query{0} !== '#') && ($query{0} !== '-'))
 			{
 				/**
 				 * If we don't have UTF-8 Multibyte support we'll have to convert queries to plain UTF-8

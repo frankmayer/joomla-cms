@@ -68,7 +68,7 @@ class InstallationModelFtp extends JModelBase
 		// Get a list of folders in the current working directory.
 		$cwdFolders = $ftp->listDetails(null, 'folders');
 
-		if ($cwdFolders === false || count($cwdFolders) == 0)
+		if ($cwdFolders === false || count($cwdFolders) === 0)
 		{
 			JFactory::getApplication()->enqueueMessage(JText::_('INSTL_FTP_NODIRECTORYLISTING'), 'error');
 
@@ -85,7 +85,7 @@ class InstallationModelFtp extends JModelBase
 		$paths = array();
 		$known = array('administrator', 'components', 'installation', 'language', 'libraries', 'plugins');
 
-		if (count(array_diff($known, $cwdFolders)) == 0)
+		if (count(array_diff($known, $cwdFolders)) === 0)
 		{
 			$paths[] = $cwd . '/';
 		}
