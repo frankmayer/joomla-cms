@@ -330,7 +330,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 	public function testGenericlist($expected, $data, $name, $attribs = null, $optKey = 'value', $optText = 'text',
 		$selected = null, $idtag = false, $translate = false)
 	{
-		if (func_num_args() == 4)
+		if (func_num_args() === 4)
 		{
 			$this->assertEquals(
 				$expected,
@@ -467,7 +467,7 @@ class JHtmlSelectTest extends PHPUnit_Framework_TestCase
 
 		$data = $dataObject;
 
-		if (func_num_args() == 4)
+		if (func_num_args() === 4)
 		{
 			$this->assertEquals(
 				$expected,

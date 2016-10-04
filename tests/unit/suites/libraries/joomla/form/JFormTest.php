@@ -1461,7 +1461,7 @@ class JFormTest extends TestCaseDatabase
 		for ($i = 0; $i < count($originalset); $i++)
 		{
 			$this->assertThat(
-				(string) $originalset[$i]->attributes()->name == (string) $set[$i]->attributes()->name,
+				(string) $originalset[$i]->attributes()->name === (string) $set[$i]->attributes()->name,
 				$this->isTrue(),
 				'Line:' . __LINE__ . ' Replace should leave fields in the original order.'
 			);

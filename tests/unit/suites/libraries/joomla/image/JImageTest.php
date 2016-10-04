@@ -520,7 +520,7 @@ class JImageTest extends TestCase
 		// Create a new JImageInspector object from the image handle.
 		$image = new JImageInspector($imageHandle);
 
-		$this->assertTrue($image->getHeight() == 42, 'Line: ' . __LINE__);
+		$this->assertTrue($image->getHeight() === 42, 'Line: ' . __LINE__);
 	}
 
 	/**
@@ -555,7 +555,7 @@ class JImageTest extends TestCase
 		// Create a new JImageInspector object from the image handle.
 		$image = new JImageInspector($imageHandle);
 
-		$this->assertTrue($image->getWidth() == 108, 'Line: ' . __LINE__);
+		$this->assertTrue($image->getWidth() === 108, 'Line: ' . __LINE__);
 	}
 
 	/**

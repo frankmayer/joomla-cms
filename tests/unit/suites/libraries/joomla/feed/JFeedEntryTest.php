@@ -202,7 +202,7 @@ class JFeedEntryTest extends TestCase
 		$properties = TestReflection::getValue($this->_instance, 'properties');
 
 		// Make sure we aren't adding the same contributor more than once.
-		$this->assertTrue(count($properties['contributors']) == 1);
+		$this->assertTrue(count($properties['contributors']) === 1);
 	}
 
 	/**
@@ -232,7 +232,7 @@ class JFeedEntryTest extends TestCase
 		$properties = TestReflection::getValue($this->_instance, 'properties');
 
 		// Make sure we aren't adding the same link more than once.
-		$this->assertTrue(count($properties['links']) == 1);
+		$this->assertTrue(count($properties['links']) === 1);
 	}
 
 	/**
