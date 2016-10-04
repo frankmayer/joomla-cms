@@ -76,9 +76,9 @@ class InstallationModelFtp extends JModelBase
 		}
 
 		// Get just the folder names from the list of folder data.
-		for ($i = 0, $n = count($cwdFolders); $i < $n; $i++)
+		foreach ($cwdFolders as &$cwdFolder)
 		{
-			$cwdFolders[$i] = $cwdFolders[$i]['name'];
+			$cwdFolder = $cwdFolder['name'];
 		}
 
 		// Check to see if Joomla is installed at the FTP current working directory.
