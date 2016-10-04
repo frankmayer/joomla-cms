@@ -385,7 +385,7 @@ class JDatabaseImporterPostgresqlTest extends PHPUnit_Framework_TestCase
 				// Change idx
 				new SimpleXmlElement('<table_structure name="#__test">' . $s1 . $f1 . $f2 . $k1 . $k3 . '</table_structure>'),
 				array(
-					"CREATE INDEX jos_dbtest_idx_title ON jos_dbtest USING btree (title)",
+					'CREATE INDEX jos_dbtest_idx_title ON jos_dbtest USING btree (title)',
 					'DROP INDEX "jos_dbtest_idx_name"'
 				),
 				'getAlterTableSQL should change index.'
@@ -612,7 +612,7 @@ class JDatabaseImporterPostgresqlTest extends PHPUnit_Framework_TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getAddIndexSQL', new SimpleXmlElement($xmlIndex)),
 			$this->equalTo(
-				"CREATE INDEX jos_dbtest_idx_name ON jos_dbtest USING btree (name)"
+				'CREATE INDEX jos_dbtest_idx_name ON jos_dbtest USING btree (name)'
 			),
 			'testGetAddIndexSQL did not yield the expected result.'
 		);
@@ -620,7 +620,7 @@ class JDatabaseImporterPostgresqlTest extends PHPUnit_Framework_TestCase
 		$this->assertThat(
 			TestReflection::invoke($instance, 'getAddIndexSQL', new SimpleXmlElement($xmlPrimaryKey)),
 			$this->equalTo(
-				"ALTER TABLE jos_dbtest ADD PRIMARY KEY (id)"
+				'ALTER TABLE jos_dbtest ADD PRIMARY KEY (id)'
 			),
 			'testGetAddIndexSQL did not yield the expected result.'
 		);
