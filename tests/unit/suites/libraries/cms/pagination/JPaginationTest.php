@@ -828,7 +828,7 @@ class JPaginationTest extends TestCase
 
 		$pagination->set($property, $value);
 
-		if ($property == 'viewall')
+		if ($property === 'viewall')
 		{
 			$result = TestReflection::getValue($pagination, $property);
 		}

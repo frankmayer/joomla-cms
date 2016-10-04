@@ -37,7 +37,7 @@ class JFormRuleUrlTest extends TestCase
 
 		if ($xmlfield == '0')
 		{
-			if ($expected == 'false')
+			if ($expected === 'false')
 			{
 				// Test fail conditions.
 				$this->assertThat(
@@ -46,7 +46,7 @@ class JFormRuleUrlTest extends TestCase
 					'Line:' . __LINE__ . ' The rule should return' . $expected . '.'
 				);
 			}
-			if ($expected == 'true')
+			if ($expected === 'true')
 			{
 				// Test pass conditions.
 				$this->assertThat(
@@ -58,7 +58,7 @@ class JFormRuleUrlTest extends TestCase
 		}
 		if ($xmlfield == '1')
 		{
-			if ($expected == 'false')
+			if ($expected === 'false')
 			{
 				// Test fail conditions.
 				$this->assertThat(
@@ -67,7 +67,7 @@ class JFormRuleUrlTest extends TestCase
 					'Line:' . __LINE__ . ' The rule should return' . $expected . '.'
 				);
 			}
-			if ($expected == 'true')
+			if ($expected === 'true')
 			{
 				// Test pass conditions.
 				$this->assertThat(

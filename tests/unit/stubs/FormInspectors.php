@@ -215,7 +215,7 @@ class JFormFieldInspector extends JFormField
 	 */
 	public function __get($name)
 	{
-		if ($name == 'element')
+		if ($name === 'element')
 		{
 			return $this->element;
 		}

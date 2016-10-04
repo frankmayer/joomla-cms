@@ -35,7 +35,7 @@ class PlgAuthenticationFake
 	 */
 	public function onUserAuthenticate($credentials, $options, &$response)
 	{
-		if ($credentials['username'] == 'test' && $credentials['password'] == 'test')
+		if ($credentials['username'] === 'test' && $credentials['password'] === 'test')
 		{
 			$response->status = JAuthentication::STATUS_SUCCESS;
 		}

@@ -374,7 +374,7 @@ class JImageTest extends TestCase
 		$this->assertTrue($a->channels == $b->channels);
 
 		// Assert that the properties that should be different are different.
-		$this->assertTrue($b->mime == 'image/gif');
+		$this->assertTrue($b->mime === 'image/gif');
 		$this->assertTrue($b->type == IMAGETYPE_GIF);
 
 		// Clean up after ourselves.
@@ -408,7 +408,7 @@ class JImageTest extends TestCase
 		$this->assertTrue($a->bits == $b->bits);
 
 		// Assert that the properties that should be different are different.
-		$this->assertTrue($b->mime == 'image/png');
+		$this->assertTrue($b->mime === 'image/png');
 		$this->assertTrue($b->type == IMAGETYPE_PNG);
 		$this->assertTrue($b->channels == null);
 

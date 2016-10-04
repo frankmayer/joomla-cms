@@ -566,7 +566,7 @@ class JArrayHelperTest extends PHPUnit_Framework_TestCase
 			),
 		);
 
-		if (substr(php_uname(), 0, 6) != 'Darwin')
+		if (substr(php_uname(), 0, 6) !== 'Darwin')
 		{
 			$input3 = array(
 				(object) array(

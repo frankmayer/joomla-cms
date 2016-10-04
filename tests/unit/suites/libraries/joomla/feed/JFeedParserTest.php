@@ -63,7 +63,7 @@ class JFeedParserTest extends TestCase
 		{
 			$this->_reader->read();
 		}
-		while ($this->_reader->name != 'tag1');
+		while ($this->_reader->name !== 'tag1');
 
 		$parser->parse();
 	}
@@ -296,7 +296,7 @@ class JFeedParserTest extends TestCase
 		{
 			$this->_reader->read();
 		}
-		while ($this->_reader->name != 'node');
+		while ($this->_reader->name !== 'node');
 
 		// Ensure that the current node is <node test="first">.
 		$this->assertEquals(XMLReader::ELEMENT, $this->_reader->nodeType);
@@ -343,7 +343,7 @@ class JFeedParserTest extends TestCase
 		{
 			$this->_reader->read();
 		}
-		while ($this->_reader->name != 'node');
+		while ($this->_reader->name !== 'node');
 
 		// Ensure that the current node is <node test="first">.
 		$this->assertEquals(XMLReader::ELEMENT, $this->_reader->nodeType);

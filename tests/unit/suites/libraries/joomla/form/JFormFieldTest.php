@@ -382,7 +382,7 @@ class JFormFieldTest extends TestCaseDatabase
 		foreach ($expected as $attr => $value)
 		{
 			// Label is html use assertTag()
-			if ($attr == 'label')
+			if ($attr === 'label')
 			{
 				$this->assertTag(
 					$matcher,

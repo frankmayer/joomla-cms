@@ -75,7 +75,7 @@ class JModelAdminTest extends TestCase
 		// Check if config was applied correctly
 		foreach ($config as $key => $value)
 		{
-			if ($key == 'text_prefix')
+			if ($key === 'text_prefix')
 			{
 				$this->assertEquals(strtoupper($value), TestReflection::getValue($this->object, $key));
 			}
