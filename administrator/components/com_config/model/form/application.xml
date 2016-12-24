@@ -1013,6 +1013,44 @@
 	<fieldset
 		name="system"
 		label="CONFIG_SYSTEM_SETTINGS_LABEL">
+		<field
+				name="ignore_log_categories"
+				type="list"
+				default="none"
+				label="Ignore log categories"
+				filter="word">
+			<option value="none">NONE</option>
+			<option value="some">SOME</option>
+			<option value="all">ALL</option>
+
+		</field>
+
+		<field name="ignored_log_categories" showon="ignore_log_categories:some" type="list" default="" label="Ignore those log categories" description="" multiple="multiple">
+			<option value="deprecated">deprecated</option>
+			<option value="jerror">jerror</option>
+			<option value="language">language</option>
+			<option value="database">database</option>
+			<option value="database-error">database-error</option>
+		</field>
+
+		<field
+				name="ignore_log_priorities"
+				type="list"
+				default="none"
+				label="Ignore log priorities"
+				filter="word">
+			<option value="none">NONE</option>
+			<option value="some">SOME</option>
+			<option value="all">ALL</option>
+
+		</field>
+
+		<field name="ignored_log_priorities" showon="ignore_log_priorities:some" type="list" default="" label="Ignore those log priorities" description="" multiple="multiple">
+			<option value="DEBUG">DEBUG</option>
+			<option value="INFO">INFO</option>
+			<option value="NOTICE">NOTICE</option>
+			<option value="WARNING">WARNING</option>
+		</field>
 
 		<field
 			name="log_path"

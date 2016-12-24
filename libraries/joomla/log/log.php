@@ -127,6 +127,38 @@ class JLog
 	protected $lookup = array();
 
 	/**
+	 * Lookup array for ignored log priorities.
+	 *
+	 * @var    array
+	 * @since  __DEPLOY_VERSION__
+	 */
+	protected static $ignorePriorities = 'none';
+
+	/**
+	 * Lookup array for ignored log categories.
+	 *
+	 * @var    array
+	 * @since  __DEPLOY_VERSION__
+	 */
+	protected static $ignoreCategories = 'none';
+
+	/**
+	 * Lookup array for ignored log priorities.
+	 *
+	 * @var    array
+	 * @since  __DEPLOY_VERSION__
+	 */
+	protected static $ignoredPriorities = array();
+
+	/**
+	 * Lookup array for ignored log categories.
+	 *
+	 * @var    array
+	 * @since  __DEPLOY_VERSION__
+	 */
+	protected static $ignoredCategories = array();
+
+	/**
 	 * Constructor.
 	 *
 	 * @since   11.1
@@ -134,6 +166,46 @@ class JLog
 	protected function __construct()
 	{
 	}
+
+	/**
+	 * Set up the behavior of this class, from Joomla's configuration
+	 *
+	 * @param  $config  Registry  A configuration object like JConfig
+	 *
+	 * @since  __DEPLOY_VERSION__
+	 */
+	public static function setupFromConfig($config = null)
+	{
+//		if ($config === null)
+//		{
+			$config = JFactory::getConfig();
+//		}
+
+		if ($config->get('ignore_log_categories', 'some'))
+		{
+			static::$ignoredCategories = $config->get('ignored_log_categories', array());
+		}
+		else
+		{
+			if ($config->get('ignore_log_categories', 'all'))
+			{
+				static::$ignoreCategories = 'all';
+			}
+		}
+
+		if ($config->get('ignore_log_priorities', 'some'))
+		{
+			static::$ignoredPriorities = $config->get('ignored_log_priorities', array());
+		}
+		else
+		{
+			if ($config->get('ignore_log_priorities', 'all'))
+			{
+				static::$ignorePriorities = 'all';
+			}
+		}
+	}
+
 
 	/**
 	 * Method to add an entry to the log.
@@ -149,11 +221,30 @@ class JLog
 	 */
 	public static function add($entry, $priority = self::INFO, $category = '', $date = null)
 	{
+		if (static::$ignorePriorities === 'all') {
+			return;
+		}
+		if (static::$ignoreCategories === 'all') {
+			return;
+		}
+
+		if (static::$ignorePriorities === 'some') {
+			if (in_array($priority, static::$ignoredPriorities, true)) {
+				return;
+			}
+		}
+		if (static::$ignoreCategories === 'some') {
+			if (in_array($category, static::$ignoredCategories, true)) {
+				return;
+			}
+		}
+
 		// Automatically instantiate the singleton object if not already done.
 		if (empty(static::$instance))
 		{
 			static::setInstance(new JLog);
 		}
+
 
 		// If the entry object isn't a JLogEntry object let's make one.
 		if (!($entry instanceof JLogEntry))

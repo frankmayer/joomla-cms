@@ -52,6 +52,15 @@ class ConfigControllerApplicationSave extends JControllerBase
 		$model = new ConfigModelApplication;
 		$data  = $this->input->post->get('jform', array(), 'array');
 
+		// If no ignored_log_priorities data found, make sure we have an empty array
+		if (empty($data['ignored_log_priorities'])) {
+			$data['ignored_log_priorities'] = array();
+		}
+		// If no ignored_log_categories data found, make sure we have an empty array
+		if (empty($data['ignored_log_categories'])) {
+			$data['ignored_log_categories'] = array();
+		}
+
 		// Complete data array if needed
 		$oldData = $model->getData();
 		$data = array_replace($oldData, $data);

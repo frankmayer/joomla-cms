@@ -51,6 +51,8 @@ ob_end_clean();
 // System configuration.
 $config = new JConfig;
 
+JLog::setupFromConfig($config);
+
 // Set the error_reporting
 switch ($config->error_reporting)
 {
