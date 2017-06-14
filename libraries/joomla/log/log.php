@@ -176,10 +176,10 @@ class JLog
 	 */
 	public static function setupFromConfig($config = null)
 	{
-//		if ($config === null)
-//		{
+		if ($config === null)
+		{
 			$config = JFactory::getConfig();
-//		}
+		}
 
 		if ($config->get('ignore_log_categories', 'some'))
 		{
